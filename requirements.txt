@@ -1,0 +1,4 @@
+mkdocs-material[all]
+mkdocs-static-i18n[material]
+mkdocs-glightbox
+mdx-truly-sane-lists
