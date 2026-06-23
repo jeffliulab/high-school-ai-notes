@@ -1,4 +1,4 @@
-# 第3章 Round 2 · 邀请赛（GPU·全考纲）
+# Round 2 · 邀请赛（GPU·全考纲）
 
 !!! abstract "本关目标"
     - 待补充

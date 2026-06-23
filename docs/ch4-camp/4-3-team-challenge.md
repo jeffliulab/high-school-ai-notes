@@ -1,4 +1,4 @@
-# 4.3 团队挑战 Team Challenge
+# 3. 团队挑战 Team Challenge
 
 !!! abstract "本页目标"
     - 待补充

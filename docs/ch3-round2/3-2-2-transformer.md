@@ -1,4 +1,4 @@
-# 3.2.2 Transformer 架构
+# 2.2 Transformer 架构
 
 !!! abstract "学习目标"
     - 待补充（2~3 条，可量化）

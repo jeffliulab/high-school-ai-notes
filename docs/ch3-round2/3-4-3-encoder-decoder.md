@@ -1,4 +1,4 @@
-# 3.4.3 Encoder-Decoder
+# 4.3 Encoder-Decoder
 
 !!! abstract "学习目标"
     - 待补充（2~3 条，可量化）

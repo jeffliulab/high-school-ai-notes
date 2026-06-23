@@ -1,4 +1,4 @@
-# 1.3.1 线性代数
+# 3.1 线性代数
 
 > **难度** ⭐⭐☆☆☆ · **前置**：高中向量与矩阵基础
 
@@ -29,7 +29,7 @@
   <text x="250" y="56" font-size="13" fill="var(--dia-blue)">Av</text>
 </svg>
 </div>
-<p class="figure-caption">图 1.3.1：矩阵 A 把向量 v 变成了 Av——旋转加缩放。神经网络的每一层都在重复做这件事。</p>
+<p class="figure-caption">图 3.1：矩阵 A 把向量 v 变成了 Av——旋转加缩放。神经网络的每一层都在重复做这件事。</p>
 
 把这个画面记在心里，后面学线性回归、PCA、神经网络时，你会发现它们都不过是这张图的变体。
 
@@ -119,9 +119,9 @@ print(s)
 
 这一节不是为了学数学而学数学，它马上就会派上用场：
 
-- **线性回归**的解析解 $\hat{\mathbf{w}}=(X^\top X)^{-1}X^\top\mathbf{y}$，整个就是一串矩阵运算（见 [2.1.2 线性回归](../ch2-round1/2-1-2-linear-regression.md)）。
-- **神经网络**的每一层都是 $\mathbf{y}=W\mathbf{x}+\mathbf{b}$，核心还是矩阵乘向量（见 [2.2.1 感知机与 MLP](../ch2-round1/2-2-1-perceptron-mlp.md)）。
-- **PCA 降维**靠的就是对数据做特征分解或 SVD（见 [2.1.8 无监督学习](../ch2-round1/2-1-8-unsupervised.md)）。
+- **线性回归**的解析解 $\hat{\mathbf{w}}=(X^\top X)^{-1}X^\top\mathbf{y}$，整个就是一串矩阵运算（见 [1.2 线性回归](../ch2-round1/2-1-2-linear-regression.md)）。
+- **神经网络**的每一层都是 $\mathbf{y}=W\mathbf{x}+\mathbf{b}$，核心还是矩阵乘向量（见 [2.1 感知机与 MLP](../ch2-round1/2-2-1-perceptron-mlp.md)）。
+- **PCA 降维**靠的就是对数据做特征分解或 SVD（见 [1.8 无监督学习](../ch2-round1/2-1-8-unsupervised.md)）。
 
 ## 练习
 

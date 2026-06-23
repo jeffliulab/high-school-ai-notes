@@ -1,4 +1,4 @@
-# 第5章 Champion · 国际赛（IOAI & IAIO）
+# Champion · 国际赛（IOAI & IAIO）
 
 !!! abstract "本关目标"
     - 待补充

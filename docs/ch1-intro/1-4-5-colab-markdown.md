@@ -1,6 +1,6 @@
-# 1.4.5 Colab 与 Markdown
+# 4.5 Colab 与 Markdown
 
-> **难度** ⭐☆☆☆☆ · **前置**：[1.4.1 Python 基础](1-4-1-python.md)
+> **难度** ⭐☆☆☆☆ · **前置**：[4.1 Python 基础](1-4-1-python.md)
 
 !!! abstract "读完这一节，你会"
     - 熟悉 Colab 的单元、运行时（CPU/GPU）和几个常用操作
@@ -86,7 +86,7 @@ $$\frac{\partial L}{\partial w} = (wx - y)\,x$$
 
 ## 它在后面会怎么用到
 
-整个 Round 1 和 Round 2 都在 Colab 里作答（回顾 [1.1 赛事与赛程介绍](1-1-competitions.md)）。而且本网站里所有的代码，你都可以直接复制进 Colab 跑起来练手——边学边练，效果最好。
+整个 Round 1 和 Round 2 都在 Colab 里作答（回顾 [1. 赛事与赛程介绍](1-1-competitions.md)）。而且本网站里所有的代码，你都可以直接复制进 Colab 跑起来练手——边学边练，效果最好。
 
 ## 练习
 

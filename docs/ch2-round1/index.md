@@ -1,4 +1,4 @@
-# 第2章 Round 1 · 资格赛（CPU·基础）
+# Round 1 · 资格赛（CPU·基础）
 
 !!! abstract "本关目标"
     - 待补充
