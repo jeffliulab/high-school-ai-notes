@@ -64,3 +64,64 @@
 
 /* ---------- 图片灯箱遮罩（glightbox） ---------- */
 .goverlay { background: rgba(26, 22, 18, 0.86) !important; }
+
+/* ============================================================
+   Tufte 风格 SVG 配图系统（移植自姐妹站 USACO，暖色基调一致）
+   用法：<div class="diagram"><svg>…</svg></div>
+        <p class="figure-caption">图注</p>
+   配色用 var(--dia-*)，自动适配亮/暗模式。
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --dia-bg:              #f5f0e8;   /* 主背景 (warm cream) */
+  --dia-bg-card:         #ffffff;
+  --dia-bg-deep:         #ede8df;
+  --dia-stroke:          #1a1612;   /* 主笔画 / ink */
+  --dia-stroke-soft:     #6b5f4e;
+  --dia-stroke-tertiary: #9c8e7a;
+  --dia-accent:          #c4673a;   /* terracotta */
+  --dia-accent-deep:     #b55d32;
+  --dia-accent-soft:     rgba(196, 103, 58, .08);
+  --dia-green:           #4a6741;
+  --dia-green-soft:      #8bc086;
+  --dia-blue:            #2c4d6e;
+  --dia-gold:            #b8932c;
+  --dia-rule:            #ede8df;
+}
+
+[data-md-color-scheme="slate"] {
+  --dia-bg:              #1a1612;
+  --dia-bg-card:         #252018;
+  --dia-bg-deep:         #2e2820;
+  --dia-stroke:          #e8e0d8;
+  --dia-stroke-soft:     #a09888;
+  --dia-stroke-tertiary: #6b5f4e;
+  --dia-accent:          #da7756;
+  --dia-accent-deep:     #c4673a;
+  --dia-accent-soft:     rgba(218, 119, 86, .12);
+  --dia-green:           #8bc086;
+  --dia-green-soft:      #4a6741;
+  --dia-blue:            #7fa3c8;
+  --dia-gold:            #e8c060;
+  --dia-rule:            #2e2820;
+}
+
+.diagram {
+  background: var(--dia-bg);
+  border: 1px solid var(--dia-rule);
+  border-radius: 4px;
+  padding: 32px 24px;
+  margin: 28px 0;
+  text-align: center;
+  overflow-x: auto;
+}
+.diagram svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.figure-caption {
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--dia-stroke-soft);
+  text-align: center;
+  margin: -16px 0 28px 0;
+}

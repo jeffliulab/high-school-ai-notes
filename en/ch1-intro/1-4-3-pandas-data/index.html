@@ -961,7 +961,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、原理与数学推导
+        二、核心用法速览
       
     </span>
   </a>
@@ -972,7 +972,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、代码实现
+        三、实战：一条龙预处理
       
     </span>
   </a>
@@ -4099,7 +4099,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、原理与数学推导
+        二、核心用法速览
       
     </span>
   </a>
@@ -4110,7 +4110,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、代码实现
+        三、实战：一条龙预处理
       
     </span>
   </a>
@@ -4248,44 +4248,94 @@
 
 
 <h1 id="143-pandas">1.4.3 Pandas 与数据处理<a class="headerlink" href="#143-pandas" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>难度</strong> ⭐⭐☆☆☆ · <strong>前置</strong>：<a href="../1-4-2-numpy-tensors/">1.4.2 NumPy 与张量</a></p>
+</blockquote>
+<p>竞赛数据往往是一张张 CSV 表格。Pandas 就是 Python 里的"Excel++"：读表、选列、补缺失、变换特征，全都几行搞定。机器学习的第一步永远是把数据<strong>洗干净、整理成模型能吃的形状</strong>，这一节就讲这件事。</p>
 <div class="admonition abstract">
 <p class="admonition-title">学习目标</p>
 <ul>
-<li>待补充（2~3 条，可量化）</li>
+<li>会用 <code>DataFrame</code> 读取、选择、过滤数据</li>
+<li>能检测并处理缺失值，理解归一化/标准化/独热编码</li>
+<li>避开 <code>SettingWithCopyWarning</code> 等常见数据处理坑</li>
 </ul>
 </div>
 <h2 id="_1">一、直觉：它解决什么问题<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<!-- 生活化类比，先建立学习动机 -->
+<p>原始数据有缺失、有文字类别、量纲不一。模型只认数字、怕缺失、对尺度敏感。Pandas 负责把"脏表格"变成"干净的数值矩阵"，再交给 NumPy/PyTorch。</p>
+<h2 id="_2">二、核心用法速览<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-<h2 id="_2">二、原理与数学推导<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<!-- 适度推导，配图与公式（KaTeX：行内 $...$，独立 $$...$$） -->
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data.csv"</span><span class="p">)</span>     <span class="c1"># 读 CSV</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>                        <span class="c1"># 看前几行</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">();</span> <span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>         <span class="c1"># 类型概览 / 数值统计</span>
 
-<h2 id="_3">三、代码实现<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<!-- 从零实现（NumPy / PyTorch）+ 库版（scikit-learn / torch）对比 -->
+<span class="c1"># 选择与过滤</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span>                        <span class="c1"># 取一列（Series）</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">"age"</span><span class="p">,</span> <span class="s2">"score"</span><span class="p">]]</span>             <span class="c1"># 取多列</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">]</span>           <span class="c1"># 按条件过滤行</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>                     <span class="c1"># 按位置取前 5 行</span>
 
-<div class="highlight"><pre><span></span><code><span class="c1"># 待补充</span>
+<span class="c1"># 缺失值</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>                  <span class="c1"># 每列缺失个数</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">(),</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>   <span class="c1"># 中位数填补</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">"label"</span><span class="p">])</span>      <span class="c1"># 标签缺失则丢弃该行</span>
+
+<span class="c1"># 分组统计</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"class"</span><span class="p">)[</span><span class="s2">"score"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="_3">三、实战：一条龙预处理<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data.csv"</span><span class="p">)</span>
+
+<span class="c1"># 1) 补缺失：数值用中位数，类别用众数</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">"city"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"city"</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"city"</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># 2) 标准化数值列（零均值、单位方差）——尺度敏感模型必做</span>
+<span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"age"</span><span class="p">,</span> <span class="s2">"income"</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="c1"># 3) 类别变量 -&gt; 独热编码（文字变 0/1 列）</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"city"</span><span class="p">])</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"label"</span><span class="p">])</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>   <span class="c1"># 交给模型的数值矩阵</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
 </code></pre></div>
 <h2 id="_4">四、常见陷阱与调试<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<!-- 易错点、典型报错与排查 -->
-
+<ul>
+<li><strong><code>SettingWithCopyWarning</code></strong>：<code>df[df.a&gt;0]["b"] = 1</code> 这种<strong>链式赋值</strong>可能改不到原表。用 <code>df.loc[df.a&gt;0, "b"] = 1</code> 一步到位。</li>
+<li><strong>缺失值不能直接喂模型</strong>：训练前务必 <code>isna().sum()</code> 检查，否则 sklearn/torch 会报错或得 NaN。</li>
+<li><strong>泄漏（leakage）</strong>：标准化的均值/方差只能用<strong>训练集</strong>统计，再套到验证/测试集，别用全量数据算（详见 <a href="../../ch2-round1/2-1-1-supervised-workflow/">2.1.1 监督学习工作流</a>）。</li>
+<li><strong><code>inplace</code> 与链式</strong>：<code>inplace=True</code> 原地改、返回 <code>None</code>，别再赋值给变量。</li>
+</ul>
 <h2 id="_5">五、应用场景<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<!-- 在后续 ML/DL 中如何用到本节内容 -->
-
+<ul>
+<li>表格类任务（Round 1 常见）的标准入口：读数据 → 清洗 → 特征 → 建模。</li>
+<li>与 <a href="../../ch2-round1/2-1-10-feature-engineering/">2.1.10 进阶特征工程</a> 衔接：这里做基础清洗，那里做高级造特征。</li>
+</ul>
 <h2 id="_6">六、练习题<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <details class="note">
 <summary>基础练习</summary>
-<ul>
-<li>待补充</li>
-</ul>
+<ol>
+<li>读入一份带缺失的 CSV，打印每列缺失比例，并对数值列用均值填补。</li>
+<li>把某个类别列用 <code>get_dummies</code> 独热化，观察列数变化。</li>
+</ol>
 </details>
 <details class="note">
 <summary>进阶练习</summary>
-<ul>
-<li>待补充</li>
-</ul>
+<ol>
+<li>实现"只用训练集统计量做标准化"的流程：先 <code>train_test_split</code>，再 fit 在训练集、transform 到测试集。</li>
+<li>用 <code>groupby</code> + <code>agg</code> 统计每个类别的均值、最大值、计数，找出异常类别。</li>
+</ol>
 </details>
 <h2 id="_7">七、小结与延伸阅读<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
-<!-- 一句话总结 + 外部资料链接 -->
+<ul>
+<li>Pandas = 表格数据处理利器：读、选、过滤、补缺失、造特征。</li>
+<li>模型怕缺失、对尺度敏感 —— <strong>填补 + 标准化 + 独热</strong>是三件基本功。</li>
+<li>统计量只用训练集算，防数据泄漏。</li>
+</ul>
+<p>延伸：<a href="https://pandas.pydata.org/docs/user_guide/10min.html">Pandas 官方 10 分钟入门</a>；Kaggle《Pandas》micro-course。</p>
 
 
 

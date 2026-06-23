@@ -4248,44 +4248,107 @@
 
 
 <h1 id="131">1.3.1 线性代数<a class="headerlink" href="#131" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>难度</strong> ⭐⭐☆☆☆ · <strong>前置</strong>：高中向量与矩阵基础</p>
+</blockquote>
+<p>线性代数是机器学习的"母语"：一张数据表就是一个矩阵，一次神经网络前向传播就是几次矩阵乘法。把它学扎实，后面的 PCA、线性回归、神经网络都会变得透明。</p>
 <div class="admonition abstract">
 <p class="admonition-title">学习目标</p>
 <ul>
-<li>待补充（2~3 条，可量化）</li>
+<li>能用"向量=数据点、矩阵=线性变换"的视角理解数据与模型</li>
+<li>会手算矩阵乘法、转置、逆，理解特征值/特征向量与 SVD 的含义</li>
+<li>能用 NumPy 完成上述运算，并说出它们在 ML 里对应什么</li>
 </ul>
 </div>
 <h2 id="_1">一、直觉：它解决什么问题<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<!-- 生活化类比，先建立学习动机 -->
+<p>一条数据（比如一朵花的"花瓣长、花瓣宽、花萼长、花萼宽"）就是一个<strong>向量</strong> <span class="arithmatex">\(\mathbf{x}\in\mathbb{R}^4\)</span>；<span class="arithmatex">\(N\)</span> 条数据堆起来就是一个 <span class="arithmatex">\(N\times 4\)</span> 的<strong>矩阵</strong> <span class="arithmatex">\(X\)</span>。而"模型"做的事，本质就是对向量做<strong>线性变换</strong>——乘一个矩阵 <span class="arithmatex">\(W\)</span>。</p>
+<div class="diagram">
+<svg viewBox="0 0 360 190" font-family="-apple-system, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="va" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="var(--dia-accent)"></path></marker>
+    <marker id="vb" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="var(--dia-blue)"></path></marker>
+  </defs>
+  <!-- axes -->
+  <line x1="40" y1="165" x2="330" y2="165" stroke="var(--dia-stroke-tertiary)" stroke-width="1"></line>
+  <line x1="40" y1="165" x2="40" y2="20" stroke="var(--dia-stroke-tertiary)" stroke-width="1"></line>
+  <!-- original vector v -->
+  <line x1="40" y1="165" x2="130" y2="105" stroke="var(--dia-accent)" stroke-width="2" marker-end="url(#va)"></line>
+  <text x="135" y="100" font-size="13" fill="var(--dia-accent)">v</text>
+  <!-- transformed Av -->
+  <line x1="40" y1="165" x2="245" y2="60" stroke="var(--dia-blue)" stroke-width="2" marker-end="url(#vb)"></line>
+  <text x="250" y="56" font-size="13" fill="var(--dia-blue)">Av</text>
+</svg>
+</div>
+<p class="figure-caption">图：矩阵 A 把向量 v 线性变换为 Av（旋转 + 缩放）。神经网络的每一层都在做这件事。</p>
 
 <h2 id="_2">二、原理与数学推导<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<!-- 适度推导，配图与公式（KaTeX：行内 $...$，独立 $$...$$） -->
-
+<p><strong>向量与矩阵</strong>：<span class="arithmatex">\(\mathbf{x}\in\mathbb{R}^n\)</span> 是 <span class="arithmatex">\(n\)</span> 个数；<span class="arithmatex">\(A\in\mathbb{R}^{m\times n}\)</span> 是 <span class="arithmatex">\(m\)</span> 行 <span class="arithmatex">\(n\)</span> 列。</p>
+<p><strong>矩阵乘法</strong>（最核心）：<span class="arithmatex">\(C=AB\)</span> 中</p>
+<div class="arithmatex">\[C_{ij}=\sum_{k} A_{ik}B_{kj}\]</div>
+<p>要求 <span class="arithmatex">\(A\)</span> 的列数 = <span class="arithmatex">\(B\)</span> 的行数。一个直观理解：<span class="arithmatex">\(A\mathbf{x}\)</span> 是用 <span class="arithmatex">\(\mathbf{x}\)</span> 的分量对 <span class="arithmatex">\(A\)</span> 的各列做加权求和。</p>
+<p><strong>转置</strong> <span class="arithmatex">\(A^\top\)</span>：行列互换，<span class="arithmatex">\((A^\top)_{ij}=A_{ji}\)</span>。<strong>逆</strong> <span class="arithmatex">\(A^{-1}\)</span> 满足 <span class="arithmatex">\(A^{-1}A=I\)</span>（仅方阵且可逆时存在）。</p>
+<p><strong>特征值与特征向量</strong>：若 <span class="arithmatex">\(A\mathbf{v}=\lambda\mathbf{v}\)</span>，则 <span class="arithmatex">\(\mathbf{v}\)</span> 是特征向量、<span class="arithmatex">\(\lambda\)</span> 是特征值——表示"这个方向只被缩放、不被旋转"。</p>
+<p><strong>奇异值分解 SVD</strong>：任意矩阵都能拆成 <span class="arithmatex">\(A=U\Sigma V^\top\)</span>，其中 <span class="arithmatex">\(\Sigma\)</span> 的对角元（奇异值）刻画"每个方向上拉伸了多少"。PCA 正是它的应用。</p>
+<div class="admonition example">
+<p class="admonition-title">例 1：矩阵 × 向量</p>
+<p>设 <span class="arithmatex">\(A=\begin{bmatrix}1&amp;2\\3&amp;4\end{bmatrix},\ \mathbf{x}=\begin{bmatrix}1\\1\end{bmatrix}\)</span>，则
+$<span class="arithmatex">\(A\mathbf{x}=\begin{bmatrix}1\cdot1+2\cdot1\\3\cdot1+4\cdot1\end{bmatrix}=\begin{bmatrix}3\\7\end{bmatrix}.\)</span>$</p>
+</div>
 <h2 id="_3">三、代码实现<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<!-- 从零实现（NumPy / PyTorch）+ 库版（scikit-learn / torch）对比 -->
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<div class="highlight"><pre><span></span><code><span class="c1"># 待补充</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">]])</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])</span>
+
+<span class="c1"># 矩阵 × 向量：用 @（推荐），不要用 *（那是逐元素乘）</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span>            <span class="c1"># [3. 7.]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>             <span class="c1"># 转置</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>  <span class="c1"># 逆</span>
+
+<span class="c1"># 特征值/特征向量</span>
+<span class="n">vals</span><span class="p">,</span> <span class="n">vecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>            <span class="c1"># 两个特征值</span>
+
+<span class="c1"># SVD：U, 奇异值 s, V^T</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>               <span class="c1"># 奇异值（降序）</span>
 </code></pre></div>
 <h2 id="_4">四、常见陷阱与调试<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<!-- 易错点、典型报错与排查 -->
-
+<ul>
+<li><strong><code>@</code> vs <code>*</code></strong>：<code>A @ x</code> 是矩阵乘法；<code>A * x</code> 是逐元素乘（且会触发广播），二者结果完全不同。</li>
+<li><strong>形状不匹配</strong>：<code>(m,n) @ (n,)</code> 合法，<code>(m,n) @ (m,)</code> 报 <code>shapes not aligned</code>——先 <code>print(A.shape, x.shape)</code> 检查。</li>
+<li><strong>逆不要随便求</strong>：解 <span class="arithmatex">\(A\mathbf{x}=\mathbf{b}\)</span> 用 <code>np.linalg.solve(A, b)</code> 比 <code>inv(A) @ b</code> 更稳更快。</li>
+<li><strong>整数数组</strong>：<code>np.array([[1,2]])</code> 是 int，做除法会被截断；显式写成浮点 <code>1.</code>。</li>
+</ul>
 <h2 id="_5">五、应用场景<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<!-- 在后续 ML/DL 中如何用到本节内容 -->
-
+<ul>
+<li><strong>线性回归</strong>：正规方程 <span class="arithmatex">\(\hat{\mathbf{w}}=(X^\top X)^{-1}X^\top\mathbf{y}\)</span> 全是矩阵运算（见 <a href="../../ch2-round1/2-1-2-linear-regression/">2.1.2 线性回归</a>）。</li>
+<li><strong>神经网络</strong>：每一层就是 <span class="arithmatex">\(\mathbf{y}=W\mathbf{x}+\mathbf{b}\)</span>（见 <a href="../../ch2-round1/2-2-1-perceptron-mlp/">2.2.1 感知机与 MLP</a>）。</li>
+<li><strong>PCA</strong>：对协方差矩阵做特征分解 / 对数据做 SVD 来降维（见 <a href="../../ch2-round1/2-1-8-unsupervised/">2.1.8 无监督学习</a>）。</li>
+</ul>
 <h2 id="_6">六、练习题<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <details class="note">
 <summary>基础练习</summary>
-<ul>
-<li>待补充</li>
-</ul>
+<ol>
+<li>手算 <span class="arithmatex">\(\begin{bmatrix}2&amp;0\\0&amp;3\end{bmatrix}\begin{bmatrix}1\\1\end{bmatrix}\)</span>，并说明它对向量做了什么几何操作。</li>
+<li>用 NumPy 验证 <span class="arithmatex">\((AB)^\top=B^\top A^\top\)</span>（随机生成 <span class="arithmatex">\(A,B\)</span>）。</li>
+</ol>
 </details>
 <details class="note">
 <summary>进阶练习</summary>
-<ul>
-<li>待补充</li>
-</ul>
+<ol>
+<li>自己写一个不用 <code>@</code> 的 <code>matmul(A, B)</code>（三重循环），再与 <code>A @ B</code> 对比结果与耗时。</li>
+<li>对一张 <span class="arithmatex">\(50\times 50\)</span> 的灰度图做 SVD，只保留前 <span class="arithmatex">\(k\)</span> 个奇异值重建，观察 <span class="arithmatex">\(k=5,20\)</span> 时的清晰度——这就是"低秩压缩"。</li>
+</ol>
 </details>
 <h2 id="_7">七、小结与延伸阅读<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
-<!-- 一句话总结 + 外部资料链接 -->
+<ul>
+<li>数据是向量、模型是矩阵变换；<strong>矩阵乘法</strong>是一切的核心运算。</li>
+<li>特征值/SVD 描述"哪个方向被拉伸多少"，是 PCA 的数学基础。</li>
+<li>用 <code>@</code> 做矩阵乘、用 <code>solve</code> 解方程，别滥用求逆。</li>
+</ul>
+<p>延伸：<a href="https://mml-book.github.io/"><em>Mathematics for Machine Learning</em></a> 第 2–4 章；3Blue1Brown《线性代数的本质》系列。</p>
 
 
 

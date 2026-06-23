@@ -933,7 +933,18 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、原理与数学推导
+        二、核心用法速览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、实战：向量化 vs 循环
       
     </span>
   </a>
@@ -944,7 +955,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、代码实现
+        四、常见陷阱与调试
       
     </span>
   </a>
@@ -955,7 +966,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、常见陷阱与调试
+        五、应用场景
       
     </span>
   </a>
@@ -966,17 +977,6 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、应用场景
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         六、练习题
       
     </span>
@@ -985,7 +985,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         七、小结与延伸阅读
@@ -4099,7 +4099,18 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、原理与数学推导
+        二、核心用法速览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、实战：向量化 vs 循环
       
     </span>
   </a>
@@ -4110,7 +4121,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、代码实现
+        四、常见陷阱与调试
       
     </span>
   </a>
@@ -4121,7 +4132,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、常见陷阱与调试
+        五、应用场景
       
     </span>
   </a>
@@ -4132,17 +4143,6 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、应用场景
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         六、练习题
       
     </span>
@@ -4151,7 +4151,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         七、小结与延伸阅读
@@ -4248,44 +4248,97 @@
 
 
 <h1 id="142-numpy">1.4.2 NumPy 与张量<a class="headerlink" href="#142-numpy" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>难度</strong> ⭐⭐☆☆☆ · <strong>前置</strong>：<a href="../1-4-1-python/">1.4.1 Python 基础</a>、<a href="../1-3-1-linear-algebra/">1.3.1 线性代数</a></p>
+</blockquote>
+<p>NumPy 是 Python 科学计算的地基：它把"对一堆数做同样的运算"变得又快又简洁（向量化）。PyTorch 的张量（tensor）几乎就是"能跑在 GPU 上、能自动求导的 NumPy 数组"，API 高度相似，学好 NumPy 等于半只脚踏进 PyTorch。</p>
 <div class="admonition abstract">
 <p class="admonition-title">学习目标</p>
 <ul>
-<li>待补充（2~3 条，可量化）</li>
+<li>会创建/索引/切片 <code>ndarray</code>，理解 <code>shape</code> 与 <code>dtype</code></li>
+<li>掌握广播与向量化，能用它替代显式 for 循环</li>
+<li>说清 NumPy 数组与 PyTorch 张量的关系</li>
 </ul>
 </div>
 <h2 id="_1">一、直觉：它解决什么问题<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<!-- 生活化类比，先建立学习动机 -->
+<p>要给一万个数都加 1，写 for 循环又慢又啰嗦。NumPy 让你直接 <code>a + 1</code>——一行搞定，底层用 C 加速，快上几十倍。这种"对整块数据一次性运算"就是<strong>向量化</strong>。</p>
+<h2 id="_2">二、核心用法速览<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<h2 id="_2">二、原理与数学推导<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<!-- 适度推导，配图与公式（KaTeX：行内 $...$，独立 $$...$$） -->
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>              <span class="c1"># 一维</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>       <span class="c1"># 二维, shape=(2,2)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
-<h2 id="_3">三、代码实现<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<!-- 从零实现（NumPy / PyTorch）+ 库版（scikit-learn / torch）对比 -->
+<span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>              <span class="c1"># (2, 2) int64</span>
 
-<div class="highlight"><pre><span></span><code><span class="c1"># 待补充</span>
+<span class="c1"># 索引与切片（支持多维、布尔）</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>        <span class="c1"># 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>        <span class="c1"># 第 0 列 -&gt; [1 3]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">])</span>       <span class="c1"># 布尔索引 -&gt; [2 3]</span>
+
+<span class="c1"># 向量化运算（逐元素，无需循环）</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>          <span class="c1"># [2 3 4]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>          <span class="c1"># [2 4 6]</span>
+
+<span class="c1"># 沿轴聚合：axis=0 按列、axis=1 按行</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>  <span class="c1"># [4 6]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># [1.5 3.5]</span>
+
+<span class="c1"># 形状变换</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </code></pre></div>
-<h2 id="_4">四、常见陷阱与调试<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<!-- 易错点、典型报错与排查 -->
+<p><strong>广播</strong>：形状不同的数组运算时，NumPy 自动把小的"拉伸"对齐。例如 <code>(3,1)</code> 与 <code>(1,4)</code> 相加得 <code>(3,4)</code>。</p>
+<h2 id="vs">三、实战：向量化 vs 循环<a class="headerlink" href="#vs" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span><span class="o">,</span><span class="w"> </span><span class="nn">time</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">)</span>
 
-<h2 id="_5">五、应用场景<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<!-- 在后续 ML/DL 中如何用到本节内容 -->
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span> <span class="n">s</span> <span class="o">+=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">v</span>          <span class="c1"># 纯 Python 循环</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"loop:"</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span>
 
-<h2 id="_6">六、练习题<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>              <span class="c1"># 向量化：一行</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"vectorized:"</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span>   <span class="c1"># 通常快几十倍</span>
+</code></pre></div>
+<p>数据标准化也是一行（后面预处理常用）：</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]])</span>
+<span class="n">x_std</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>   <span class="c1"># 每列零均值、单位方差</span>
+</code></pre></div>
+<h2 id="_3">四、常见陷阱与调试<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>view vs copy</strong>：切片返回的是<strong>视图</strong>，改它会改原数组；要独立副本用 <code>.copy()</code>。</li>
+<li><strong>广播规则</strong>：从末尾维度对齐，维度要么相等、要么有一个是 1，否则报 <code>could not be broadcast</code>。先 <code>print(a.shape, b.shape)</code>。</li>
+<li><strong>整数 dtype</strong>：<code>np.array([1,2,3])</code> 是 int，<code>/</code> 后仍可能意外；需要小数时写 <code>1.</code> 或 <code>astype(float)</code>。</li>
+<li><strong><code>axis</code> 记反</strong>：<code>axis=0</code> 是"压掉行、按列算"。记不住就用小数组试一下。</li>
+</ul>
+<h2 id="_4">五、应用场景<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<ul>
+<li>一切数值计算的底座：特征工程、距离计算、矩阵运算。</li>
+<li><strong>PyTorch 张量</strong>几乎同款 API：<code>torch.tensor</code>、<code>.shape</code>、广播、<code>@</code> 都通用；<code>torch.from_numpy()</code> 可互转（见 <a href="../../ch2-round1/2-2-4-pytorch-basics/">2.2.4 PyTorch 基础</a>）。</li>
+</ul>
+<h2 id="_5">六、练习题<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <details class="note">
 <summary>基础练习</summary>
-<ul>
-<li>待补充</li>
-</ul>
+<ol>
+<li>生成 <span class="arithmatex">\(10\times10\)</span> 的随机矩阵，求每行最大值与每列均值。</li>
+<li>不用循环，把向量里所有负数置零（提示：布尔索引或 <code>np.maximum</code>）。</li>
+</ol>
 </details>
 <details class="note">
 <summary>进阶练习</summary>
-<ul>
-<li>待补充</li>
-</ul>
+<ol>
+<li>用广播一行算出两组点的两两欧氏距离矩阵（<span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(m\times d\)</span>，<span class="arithmatex">\(B\)</span> 是 <span class="arithmatex">\(n\times d\)</span>，输出 <span class="arithmatex">\(m\times n\)</span>）。</li>
+<li>用 NumPy 实现一次 softmax（注意数值稳定：先减去每行最大值）。</li>
+</ol>
 </details>
-<h2 id="_7">七、小结与延伸阅读<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
-<!-- 一句话总结 + 外部资料链接 -->
+<h2 id="_6">七、小结与延伸阅读<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>向量化</strong>用整块运算替代 for 循环，又快又简洁。</li>
+<li><strong>广播</strong>让不同形状自动对齐，是简洁的关键，也是 bug 的来源。</li>
+<li>NumPy 与 PyTorch 张量同源，学一通两。</li>
+</ul>
+<p>延伸：<a href="https://numpy.org/doc/stable/user/quickstart.html">NumPy 官方 quickstart</a>；<a href="https://github.com/rougier/numpy-100">100 NumPy Exercises</a>。</p>
 
 
 

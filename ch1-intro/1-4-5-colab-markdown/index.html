@@ -1017,7 +1017,18 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、原理与数学推导
+        二、核心用法速览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、实战：一份答题 notebook 的样子
       
     </span>
   </a>
@@ -1028,7 +1039,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、代码实现
+        四、常见陷阱与调试
       
     </span>
   </a>
@@ -1039,7 +1050,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、常见陷阱与调试
+        五、应用场景
       
     </span>
   </a>
@@ -1050,17 +1061,6 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、应用场景
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         六、练习题
       
     </span>
@@ -1069,7 +1069,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         七、小结与延伸阅读
@@ -4099,7 +4099,18 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、原理与数学推导
+        二、核心用法速览
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、实战：一份答题 notebook 的样子
       
     </span>
   </a>
@@ -4110,7 +4121,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、代码实现
+        四、常见陷阱与调试
       
     </span>
   </a>
@@ -4121,7 +4132,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、常见陷阱与调试
+        五、应用场景
       
     </span>
   </a>
@@ -4132,17 +4143,6 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、应用场景
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         六、练习题
       
     </span>
@@ -4151,7 +4151,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         七、小结与延伸阅读
@@ -4248,44 +4248,94 @@
 
 
 <h1 id="145-colab-markdown">1.4.5 Colab 与 Markdown<a class="headerlink" href="#145-colab-markdown" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>难度</strong> ⭐☆☆☆☆ · <strong>前置</strong>：<a href="../1-4-1-python/">1.4.1 Python 基础</a></p>
+</blockquote>
+<p>USAAIO 的考试就在 <strong>Google Colab</strong> 里进行：你在浏览器里写代码、跑模型、交答案。而且 Round 1 有"非编码题"——要求你在 <strong>Markdown 单元里用 LaTeX 写数学推导</strong>。所以 Colab + Markdown 不是周边技能，而是<strong>考场基本功</strong>。</p>
 <div class="admonition abstract">
 <p class="admonition-title">学习目标</p>
 <ul>
-<li>待补充（2~3 条，可量化）</li>
+<li>熟悉 Colab 的单元、运行时（CPU/GPU）与常用操作</li>
+<li>会用 Markdown + LaTeX 在文本单元里写清楚数学解答</li>
+<li>知道 Colab 的会话限制，避免考场上丢进度</li>
 </ul>
 </div>
 <h2 id="_1">一、直觉：它解决什么问题<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<!-- 生活化类比，先建立学习动机 -->
-
-<h2 id="_2">二、原理与数学推导<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<!-- 适度推导，配图与公式（KaTeX：行内 $...$，独立 $$...$$） -->
-
-<h2 id="_3">三、代码实现<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<!-- 从零实现（NumPy / PyTorch）+ 库版（scikit-learn / torch）对比 -->
-
-<div class="highlight"><pre><span></span><code><span class="c1"># 待补充</span>
+<p>Colab = 云端的 Jupyter Notebook，免装环境、免费 GPU、打开即用。考试给你一个 Colab 文件，里面<strong>代码单元</strong>（写 Python）和<strong>文本单元</strong>（写说明/数学）交替——你既要会跑代码，也要会用文字把思路讲清楚。</p>
+<h2 id="_2">二、核心用法速览<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p><strong>两种单元</strong></p>
+<ul>
+<li><strong>代码单元</strong>：写 Python，<code>Shift+Enter</code> 运行。</li>
+<li><strong>文本单元</strong>：写 Markdown，渲染成排版文字（标题、列表、公式、表格）。</li>
+</ul>
+<p><strong>运行时与算力</strong></p>
+<div class="highlight"><pre><span></span><code>菜单 → 代码执行程序(Runtime) → 更改运行时类型 → 选 CPU / T4 GPU
 </code></pre></div>
-<h2 id="_4">四、常见陷阱与调试<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<!-- 易错点、典型报错与排查 -->
+<ul>
+<li>Round 1 仅 CPU；Round 2 可用 GPU。</li>
+<li>验证 GPU 是否就绪：</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>   <span class="c1"># True 表示 GPU 可用</span>
+</code></pre></div>
+<p><strong>其它常用</strong></p>
+<div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">some</span><span class="o">-</span><span class="n">package</span>          <span class="c1"># 行首 ! 执行 shell 命令</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">'/content/drive'</span><span class="p">)</span>      <span class="c1"># 挂载 Google Drive 取数据</span>
+</code></pre></div>
+<p><strong>Markdown + LaTeX</strong>（写数学解答的关键）</p>
+<div class="highlight"><pre><span></span><code><span class="gu">## 解答</span>
+设损失 $L(w)=\frac{1}{2}(wx-y)^2$，对 $w$ 求导：
 
-<h2 id="_5">五、应用场景<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<!-- 在后续 ML/DL 中如何用到本节内容 -->
+$$\frac{\partial L}{\partial w}=(wx-y)\,x$$
 
-<h2 id="_6">六、练习题<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+令导数为 0 得 $w^\* = y/x$。
+</code></pre></div>
+<p>行内公式用 <code>$...$</code>，独立公式用 <code>$$...$$</code>——和本站完全一致。</p>
+<h2 id="notebook">三、实战：一份答题 notebook 的样子<a class="headerlink" href="#notebook" title="Permanent link">¶</a></h2>
+<p>一道典型 Round 1 题的作答结构：</p>
+<ol>
+<li><strong>文本单元</strong>：用 Markdown 重述思路、写出关键公式推导（非编码得分点）。</li>
+<li><strong>代码单元</strong>：实现算法、训练模型、打印结果。</li>
+<li><strong>文本单元</strong>：用一两句话解释输出、给出结论。</li>
+</ol>
+<blockquote>
+<p>评分既看代码跑出的指标，也看你文字 + 公式表达是否清晰——别只写代码不写说明。</p>
+</blockquote>
+<h2 id="_3">四、常见陷阱与调试<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>运行时重置丢变量</strong>：闲置过久（约 90 分钟无操作）或超时（约 12 小时上限）会断开，<strong>所有变量清空</strong>。要点：及时保存、把训练 checkpoint 存到 Drive。</li>
+<li><strong>单元乱序执行</strong>：Colab 允许跳着运行单元，状态依赖容易混乱。<strong>交卷前从头 <code>Restart &amp; Run all</code> 跑一遍</strong>确认可复现。</li>
+<li><strong>GPU 配额</strong>：免费版 GPU 有使用额度，频繁占用会被限流；Round 1 本就只给 CPU，别依赖 GPU。</li>
+<li><strong><code>!pip install</code> 后需重启</strong>：少数包装完要重启运行时才生效。</li>
+</ul>
+<h2 id="_4">五、应用场景<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<ul>
+<li>Round 1 / Round 2 全程在 Colab 作答（见 <a href="../1-1-competitions/">1.1 赛事与赛程介绍</a>）。</li>
+<li>本站所有代码都可直接贴进 Colab 运行练习。</li>
+</ul>
+<h2 id="_5">六、练习题<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <details class="note">
 <summary>基础练习</summary>
-<ul>
-<li>待补充</li>
-</ul>
+<ol>
+<li>新建一个 Colab，分别用代码单元打印 <code>Hello</code>、用文本单元写一段带行内公式 <span class="arithmatex">\(E=mc^2\)</span> 的说明。</li>
+<li>切换运行时到 GPU，验证 <code>torch.cuda.is_available()</code> 为 <code>True</code>。</li>
+</ol>
 </details>
 <details class="note">
 <summary>进阶练习</summary>
-<ul>
-<li>待补充</li>
-</ul>
+<ol>
+<li>用 Markdown + LaTeX 完整写出"对 <span class="arithmatex">\(L(w)=\tfrac12(wx-y)^2\)</span> 求最优 <span class="arithmatex">\(w\)</span>"的推导过程。</li>
+<li>把一个训练好的模型权重 <code>torch.save</code> 到挂载的 Drive，再在新会话里加载，模拟"断线恢复"。</li>
+</ol>
 </details>
-<h2 id="_7">七、小结与延伸阅读<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
-<!-- 一句话总结 + 外部资料链接 -->
+<h2 id="_6">七、小结与延伸阅读<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<ul>
+<li>USAAIO 在 <strong>Colab</strong> 里考，代码单元 + 文本单元交替作答。</li>
+<li>Round 1 用 <strong>Markdown + LaTeX</strong> 写数学解答是明确得分点。</li>
+<li>警惕<strong>运行时重置</strong>：勤存盘、交卷前 <code>Restart &amp; Run all</code> 验证可复现。</li>
+</ul>
+<p>延伸：<a href="https://colab.research.google.com/">Colab 官方欢迎页</a>；<a href="https://www.markdownguide.org/cheat-sheet/">Markdown 速查表</a>。</p>
 
 
 

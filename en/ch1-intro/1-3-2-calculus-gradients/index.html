@@ -4248,44 +4248,105 @@
 
 
 <h1 id="132">1.3.2 微积分与梯度<a class="headerlink" href="#132" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>难度</strong> ⭐⭐☆☆☆ · <strong>前置</strong>：<a href="../1-3-1-linear-algebra/">1.3.1 线性代数</a>、高中导数</p>
+</blockquote>
+<p>训练模型本质上就一句话：<strong>沿着梯度的反方向，一步步把损失"走"到最低点</strong>。理解梯度，你就理解了梯度下降和反向传播的共同核心。</p>
 <div class="admonition abstract">
 <p class="admonition-title">学习目标</p>
 <ul>
-<li>待补充（2~3 条，可量化）</li>
+<li>理解导数、偏导、梯度的几何含义（梯度 = 最陡上升方向）</li>
+<li>会用链式法则把复合函数的导数拆开</li>
+<li>能用 NumPy 数值法估计梯度，并解释它和解析梯度的关系</li>
 </ul>
 </div>
 <h2 id="_1">一、直觉：它解决什么问题<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<!-- 生活化类比，先建立学习动机 -->
+<p>把"损失函数"想成一片山地：高度 = 损失，坐标 = 模型参数。我们要找最低的谷底。<strong>梯度</strong> <span class="arithmatex">\(\nabla f\)</span> 指向<strong>上升最快</strong>的方向，那么它的反方向 <span class="arithmatex">\(-\nabla f\)</span> 就是<strong>下降最快</strong>的方向——朝那个方向迈一小步，损失就降一点。</p>
+<div class="diagram">
+<svg viewBox="0 0 360 190" font-family="-apple-system, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="ga" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="var(--dia-accent)"></path></marker>
+  </defs>
+  <path d="M30 40 Q180 250 330 40" fill="none" stroke="var(--dia-blue)" stroke-width="2"></path>
+  <!-- descending balls -->
+  <circle cx="70" cy="108" r="5" fill="var(--dia-accent)"></circle>
+  <circle cx="110" cy="138" r="5" fill="var(--dia-accent)"></circle>
+  <circle cx="150" cy="153" r="5" fill="var(--dia-accent)"></circle>
+  <circle cx="180" cy="156" r="6" fill="var(--dia-accent-deep)"></circle>
+  <path d="M76 112 L104 134" stroke="var(--dia-accent)" stroke-width="1.5" marker-end="url(#ga)"></path>
+  <path d="M116 142 L144 150" stroke="var(--dia-accent)" stroke-width="1.5" marker-end="url(#ga)"></path>
+  <text x="186" y="150" font-size="12" fill="var(--dia-stroke-soft)">最低点</text>
+  <text x="40" y="36" font-size="12" fill="var(--dia-stroke-soft)">损失</text>
+</svg>
+</div>
+<p class="figure-caption">图：训练 = 沿损失曲线的负梯度方向一步步"下山"到最低点。</p>
 
 <h2 id="_2">二、原理与数学推导<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<!-- 适度推导，配图与公式（KaTeX：行内 $...$，独立 $$...$$） -->
-
+<p><strong>导数</strong>：<span class="arithmatex">\(f'(x)=\lim_{h\to0}\dfrac{f(x+h)-f(x)}{h}\)</span>，即曲线在某点的斜率。</p>
+<p><strong>偏导与梯度</strong>：多元函数 <span class="arithmatex">\(f(\mathbf{x})\)</span> 对每个分量求偏导，拼成向量就是<strong>梯度</strong>：</p>
+<div class="arithmatex">\[\nabla f=\Big(\frac{\partial f}{\partial x_1},\dots,\frac{\partial f}{\partial x_n}\Big).\]</div>
+<p><strong>链式法则</strong>（反向传播的命根子）：若 <span class="arithmatex">\(y=g(u),\ u=h(x)\)</span>，则</p>
+<div class="arithmatex">\[\frac{dy}{dx}=\frac{dy}{du}\cdot\frac{du}{dx}.\]</div>
+<p><strong>Jacobian / Hessian</strong>（了解即可）：向量值函数的一阶导排成矩阵是 Jacobian；二阶偏导排成矩阵是 Hessian，描述曲率。</p>
+<div class="admonition example">
+<p class="admonition-title">例 1：手算一个梯度</p>
+<p>设 <span class="arithmatex">\(f(x,y)=x^2+3y^2\)</span>。则 <span class="arithmatex">\(\dfrac{\partial f}{\partial x}=2x,\ \dfrac{\partial f}{\partial y}=6y\)</span>，所以 <span class="arithmatex">\(\nabla f=(2x,\,6y)\)</span>。在点 <span class="arithmatex">\((1,1)\)</span> 处 <span class="arithmatex">\(\nabla f=(2,6)\)</span>——<span class="arithmatex">\(y\)</span> 方向更陡。</p>
+</div>
 <h2 id="_3">三、代码实现<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<!-- 从零实现（NumPy / PyTorch）+ 库版（scikit-learn / torch）对比 -->
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<div class="highlight"><pre><span></span><code><span class="c1"># 待补充</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>                      <span class="c1"># f(x, y) = x^2 + 3y^2</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">numerical_grad</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""中心差分估计梯度：对每个分量加减一点点看变化。"""</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+        <span class="n">xp</span><span class="p">,</span> <span class="n">xm</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">xp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">eps</span><span class="p">;</span> <span class="n">xm</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">eps</span>
+        <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">xp</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">xm</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">eps</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">g</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numerical_grad</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>    <span class="c1"># ≈ [2. 6.]，与解析解 (2,6) 吻合</span>
 </code></pre></div>
+<blockquote>
+<p>数值梯度只用来<strong>验证</strong>解析梯度是否写对（"gradient check"）；真正训练时用解析梯度（PyTorch 的 <code>autograd</code> 自动算）。</p>
+</blockquote>
 <h2 id="_4">四、常见陷阱与调试<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<!-- 易错点、典型报错与排查 -->
-
+<ul>
+<li><strong><code>eps</code> 取值</strong>：太大不准、太小被浮点误差吞掉，<span class="arithmatex">\(10^{-4}\sim10^{-6}\)</span> 较稳。</li>
+<li><strong>链式法则方向</strong>：复合函数从外往里逐层乘，漏一层就错——反向传播报错常源于此。</li>
+<li><strong>就地修改</strong>：<code>xp = x</code> 不是拷贝！必须 <code>x.copy()</code>，否则改 <code>xp</code> 会污染 <code>x</code>。</li>
+<li><strong>梯度爆炸/消失</strong>：深层网络里链式相乘会让梯度过大或过小，后面用归一化/裁剪缓解。</li>
+</ul>
 <h2 id="_5">五、应用场景<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<!-- 在后续 ML/DL 中如何用到本节内容 -->
-
+<ul>
+<li><strong>梯度下降</strong>：<span class="arithmatex">\(\theta\leftarrow\theta-\eta\nabla f\)</span>，一切训练的更新公式（见 <a href="../1-3-4-convex-optimization/">1.3.4 凸优化基础</a>）。</li>
+<li><strong>反向传播</strong>：神经网络用链式法则逐层回传梯度（见 <a href="../../ch2-round1/2-2-2-backprop/">2.2.2 梯度下降与反向传播</a>）。</li>
+</ul>
 <h2 id="_6">六、练习题<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <details class="note">
 <summary>基础练习</summary>
-<ul>
-<li>待补充</li>
-</ul>
+<ol>
+<li>求 <span class="arithmatex">\(f(x)=\ln(1+e^{x})\)</span>（softplus）的导数，并说明它为什么总在 <span class="arithmatex">\((0,1)\)</span> 之间。</li>
+<li>用 <code>numerical_grad</code> 验证 <span class="arithmatex">\(f(x,y)=\sin(x)+xy\)</span> 在 <span class="arithmatex">\((0,1)\)</span> 的梯度。</li>
+</ol>
 </details>
 <details class="note">
 <summary>进阶练习</summary>
-<ul>
-<li>待补充</li>
-</ul>
+<ol>
+<li>用链式法则手推 <span class="arithmatex">\(\sigma(x)=\frac{1}{1+e^{-x}}\)</span> 的导数，证明 <span class="arithmatex">\(\sigma'=\sigma(1-\sigma)\)</span>（逻辑回归会用到）。</li>
+<li>写一个梯度检查函数，对比你手写的解析梯度与数值梯度的最大误差。</li>
+</ol>
 </details>
 <h2 id="_7">七、小结与延伸阅读<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
-<!-- 一句话总结 + 外部资料链接 -->
+<ul>
+<li>梯度指向上升最快方向，<strong>负梯度</strong>就是下山方向——这是训练的引擎。</li>
+<li><strong>链式法则</strong>把复合函数的导数拆成逐层相乘，是反向传播的数学本体。</li>
+<li>数值梯度用来查错，解析梯度用来训练。</li>
+</ul>
+<p>延伸：<a href="https://mml-book.github.io/"><em>Mathematics for Machine Learning</em></a> 第 5 章；3Blue1Brown《微积分的本质》。</p>
 
 
 
