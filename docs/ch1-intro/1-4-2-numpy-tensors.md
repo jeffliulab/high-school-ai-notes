@@ -2,48 +2,63 @@
 
 > **难度** ⭐⭐☆☆☆ · **前置**：[1.4.1 Python 基础](1-4-1-python.md)、[1.3.1 线性代数](1-3-1-linear-algebra.md)
 
-NumPy 是 Python 科学计算的地基：它把"对一堆数做同样的运算"变得又快又简洁（向量化）。PyTorch 的张量（tensor）几乎就是"能跑在 GPU 上、能自动求导的 NumPy 数组"，API 高度相似，学好 NumPy 等于半只脚踏进 PyTorch。
+!!! abstract "读完这一节，你会"
+    - 会创建、索引、切片 NumPy 数组，看懂 `shape` 和 `dtype`
+    - 理解"向量化"和"广播"，并用它们替代繁琐的 `for` 循环
+    - 说清 NumPy 数组和 PyTorch 张量之间是什么关系
 
-!!! abstract "学习目标"
-    - 会创建/索引/切片 `ndarray`，理解 `shape` 与 `dtype`
-    - 掌握广播与向量化，能用它替代显式 for 循环
-    - 说清 NumPy 数组与 PyTorch 张量的关系
+## 为什么需要 NumPy
 
-## 一、直觉：它解决什么问题
+假设你要给一万个数字每个都加上 1。用纯 Python 写，你得写一个 `for` 循环，一个一个地加——既慢又啰嗦。而用 NumPy，你只需要写 `a + 1`，一行搞定，而且底层是用 C 语言执行的，速度往往快上几十倍。
 
-要给一万个数都加 1，写 for 循环又慢又啰嗦。NumPy 让你直接 `a + 1`——一行搞定，底层用 C 加速，快上几十倍。这种"对整块数据一次性运算"就是**向量化**。
+这种"对一整块数据一次性做运算"的方式，叫做**向量化（vectorization）**。它是 NumPy 的灵魂，也是几乎所有科学计算和机器学习代码的基本写法。所以这一节的重点，不只是记住几个函数，而是养成"能向量化就别写循环"的习惯。
 
-## 二、核心用法速览
+## ndarray：把一堆数装进一个盒子
+
+NumPy 的核心对象叫 `ndarray`（多维数组）。你可以把它理解成"一个规整的、装满数字的盒子"——一维的像一排，二维的像一张表。
 
 ```python
 import numpy as np
 
-a = np.array([1, 2, 3])              # 一维
-M = np.array([[1, 2], [3, 4]])       # 二维, shape=(2,2)
-np.zeros((2, 3)); np.ones(3); np.arange(5); np.linspace(0, 1, 5)
+a = np.array([1, 2, 3])             # 一维数组
+M = np.array([[1, 2], [3, 4]])      # 二维数组，形状是 (2, 2)
 
-print(M.shape, M.dtype)              # (2, 2) int64
-
-# 索引与切片（支持多维、布尔）
-print(M[0, 1])        # 2
-print(M[:, 0])        # 第 0 列 -> [1 3]
-print(a[a > 1])       # 布尔索引 -> [2 3]
-
-# 向量化运算（逐元素，无需循环）
-print(a + 1)          # [2 3 4]
-print(a * 2)          # [2 4 6]
-
-# 沿轴聚合：axis=0 按列、axis=1 按行
-print(M.sum(axis=0))  # [4 6]
-print(M.mean(axis=1)) # [1.5 3.5]
-
-# 形状变换
-print(np.arange(6).reshape(2, 3))
+print(M.shape, M.dtype)             # (2, 2) int64
 ```
 
-**广播**：形状不同的数组运算时，NumPy 自动把小的"拉伸"对齐。例如 `(3,1)` 与 `(1,4)` 相加得 `(3,4)`。
+每个数组都有两个关键属性：`shape` 告诉你它"几行几列"，`dtype` 告诉你"里面装的是什么类型的数"。这两个属性你会反复查看，因为大量 bug 都出在"形状不对"或"类型不对"上。
 
-## 三、实战：向量化 vs 循环
+除了手写，NumPy 还提供了一批快捷的创建函数：
+
+```python
+np.zeros((2, 3))     # 全 0
+np.ones(3)           # 全 1
+np.arange(5)         # 0,1,2,3,4
+np.linspace(0, 1, 5) # 0 到 1 之间均匀取 5 个数
+```
+
+## 索引与切片：取出你要的部分
+
+数组建好后，我们常常只想用其中一部分。NumPy 的索引非常灵活，支持多维和"按条件"取数：
+
+```python
+print(M[0, 1])     # 第 0 行第 1 列：2
+print(M[:, 0])     # 取第 0 列：[1 3]
+print(a[a > 1])    # 布尔索引：只留下大于 1 的元素 [2 3]
+```
+
+最后那行"布尔索引"特别好用：你给出一个条件，NumPy 就帮你把满足条件的元素全挑出来，完全不用写循环。
+
+## 向量化：用一行替代循环
+
+现在来看 NumPy 真正的威力。所有逐元素的运算，都可以直接对整个数组写：
+
+```python
+print(a + 1)       # 每个元素都加 1：[2 3 4]
+print(a * 2)       # 每个元素都乘 2：[2 4 6]
+```
+
+到底快多少？我们做个对比：分别用纯 Python 循环和向量化，去算一百万个数的平方和。
 
 ```python
 import numpy as np, time
@@ -51,47 +66,55 @@ x = np.random.rand(1_000_000)
 
 t0 = time.time()
 s = 0.0
-for v in x: s += v * v          # 纯 Python 循环
-print("loop:", time.time() - t0)
+for v in x:
+    s += v * v               # 纯 Python 循环
+print("循环:", time.time() - t0)
 
 t0 = time.time()
-s2 = (x * x).sum()              # 向量化：一行
-print("vectorized:", time.time() - t0)   # 通常快几十倍
+s2 = (x * x).sum()           # 向量化：一行
+print("向量化:", time.time() - t0)
 ```
 
-数据标准化也是一行（后面预处理常用）：
+你会看到向量化的版本快了几十倍。这不是因为算法更聪明，而是 NumPy 把循环交给了底层的 C 代码——**这正是为什么写 AI 代码时，我们总想方设法用向量化替代 `for` 循环。**
+
+## 广播：形状不同也能一起运算
+
+有时我们想让两个形状不同的数组做运算，比如给矩阵的每一行都减去同一个向量。NumPy 用一个叫**广播（broadcasting）**的机制自动处理这件事：它会把较小的那个数组"按规则拉伸"到和大的对齐，再逐元素运算。
+
+举个最实用的例子——把一份数据的每一列都标准化（减去该列均值、再除以该列标准差）：
 
 ```python
 x = np.array([[1., 2.], [3., 4.], [5., 6.]])
-x_std = (x - x.mean(axis=0)) / x.std(axis=0)   # 每列零均值、单位方差
+x_std = (x - x.mean(axis=0)) / x.std(axis=0)   # 每列变成零均值、单位方差
 ```
 
-## 四、常见陷阱与调试
+这里 `x.mean(axis=0)` 是一个长度为 2 的向量（每列的均值），却能直接和形状为 (3, 2) 的 `x` 相减——靠的就是广播。`axis=0` 的意思是"沿着行的方向压缩，得到每一列的结果"，这个 `axis` 参数一开始容易记反，多用几次就熟了。
 
-- **view vs copy**：切片返回的是**视图**，改它会改原数组；要独立副本用 `.copy()`。
-- **广播规则**：从末尾维度对齐，维度要么相等、要么有一个是 1，否则报 `could not be broadcast`。先 `print(a.shape, b.shape)`。
-- **整数 dtype**：`np.array([1,2,3])` 是 int，`/` 后仍可能意外；需要小数时写 `1.` 或 `astype(float)`。
-- **`axis` 记反**：`axis=0` 是"压掉行、按列算"。记不住就用小数组试一下。
+## NumPy 和 PyTorch 张量是什么关系
 
-## 五、应用场景
+最后说一句你以后会反复用到的事实：PyTorch 里的**张量（tensor）**，几乎就是"能跑在 GPU 上、还能自动求导的 NumPy 数组"。它们的 API 高度相似——`shape`、广播、`@` 矩阵乘法都通用，还能用 `torch.from_numpy()` 互相转换。所以你现在学的每一个 NumPy 操作，到了 PyTorch 里几乎都能原样照搬（见 [2.2.4 PyTorch 基础](../ch2-round1/2-2-4-pytorch-basics.md)）。
 
-- 一切数值计算的底座：特征工程、距离计算、矩阵运算。
-- **PyTorch 张量**几乎同款 API：`torch.tensor`、`.shape`、广播、`@` 都通用；`torch.from_numpy()` 可互转（见 [2.2.4 PyTorch 基础](../ch2-round1/2-2-4-pytorch-basics.md)）。
+## 容易踩的坑
 
-## 六、练习题
+- **视图还是副本**：切片返回的往往是原数组的"视图"，改它会连原数组一起改。想要独立的一份，记得 `.copy()`。
+- **广播规则**：两个数组从最后一维开始对齐，每一维要么相等、要么有一个是 1，否则报 `could not be broadcast`。报错时先 `print(a.shape, b.shape)`。
+- **整数类型的陷阱**：`np.array([1, 2, 3])` 是整数数组，做除法可能得到意料外的结果。需要小数就写 `1.` 或用 `astype(float)`。
+- **`axis` 记反**：`axis=0` 是"按列算"，`axis=1` 是"按行算"。拿个小数组试一下就清楚了。
+
+## 练习
 
 ??? note "基础练习"
-    1. 生成 $10\times10$ 的随机矩阵，求每行最大值与每列均值。
-    2. 不用循环，把向量里所有负数置零（提示：布尔索引或 `np.maximum`）。
+    1. 生成一个 $10\times10$ 的随机矩阵，分别求出每一行的最大值和每一列的均值。
+    2. 不用任何循环，把一个向量里所有的负数都变成 0。这个操作在神经网络里叫 ReLU，你马上会在后面遇到它。
 
 ??? note "进阶练习"
-    1. 用广播一行算出两组点的两两欧氏距离矩阵（$A$ 是 $m\times d$，$B$ 是 $n\times d$，输出 $m\times n$）。
-    2. 用 NumPy 实现一次 softmax（注意数值稳定：先减去每行最大值）。
+    1. 用广播，一行算出两组点之间的两两欧氏距离矩阵（$A$ 是 $m\times d$，$B$ 是 $n\times d$，输出 $m\times n$）。
+    2. 用 NumPy 实现一次 softmax，注意数值稳定——先给每一行减去它的最大值，再做指数运算。
 
-## 七、小结与延伸阅读
+## 小结
 
-- **向量化**用整块运算替代 for 循环，又快又简洁。
-- **广播**让不同形状自动对齐，是简洁的关键，也是 bug 的来源。
-- NumPy 与 PyTorch 张量同源，学一通两。
+- **向量化**用整块运算替代 `for` 循环，又快又简洁，是 NumPy 的灵魂。
+- **广播**让不同形状的数组自动对齐，是简洁的来源，也是 bug 的来源。
+- NumPy 数组和 PyTorch 张量同根同源，学会一个，另一个几乎免费。
 
-延伸：[NumPy 官方 quickstart](https://numpy.org/doc/stable/user/quickstart.html)；[100 NumPy Exercises](https://github.com/rougier/numpy-100)。
+想多练手，推荐 [NumPy 官方 quickstart](https://numpy.org/doc/stable/user/quickstart.html) 和经典的 [100 NumPy Exercises](https://github.com/rougier/numpy-100)。
