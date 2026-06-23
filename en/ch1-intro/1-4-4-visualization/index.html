@@ -978,7 +978,29 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一、直觉：它解决什么问题
+        为什么动手前要先画图
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matplotlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matplotlib：最基础的画笔
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seaborn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seaborn：让统计图更省事
       
     </span>
   </a>
@@ -989,7 +1011,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、核心用法速览
+        实战：一眼看穿分布和离群点
       
     </span>
   </a>
@@ -1000,7 +1022,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、实战：分布 + 离群点一眼看穿
+        容易踩的坑
       
     </span>
   </a>
@@ -1011,7 +1033,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、常见陷阱与调试
+        它在后面会怎么用到
       
     </span>
   </a>
@@ -1022,7 +1044,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、应用场景
+        练习
       
     </span>
   </a>
@@ -1033,18 +1055,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        六、练习题
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        七、小结与延伸阅读
+        小结
       
     </span>
   </a>
@@ -4088,7 +4099,29 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一、直觉：它解决什么问题
+        为什么动手前要先画图
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matplotlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matplotlib：最基础的画笔
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seaborn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seaborn：让统计图更省事
       
     </span>
   </a>
@@ -4099,7 +4132,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、核心用法速览
+        实战：一眼看穿分布和离群点
       
     </span>
   </a>
@@ -4110,7 +4143,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、实战：分布 + 离群点一眼看穿
+        容易踩的坑
       
     </span>
   </a>
@@ -4121,7 +4154,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、常见陷阱与调试
+        它在后面会怎么用到
       
     </span>
   </a>
@@ -4132,7 +4165,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、应用场景
+        练习
       
     </span>
   </a>
@@ -4143,18 +4176,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        六、练习题
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        七、小结与延伸阅读
+        小结
       
     </span>
   </a>
@@ -4251,112 +4273,110 @@
 <blockquote>
 <p><strong>难度</strong> ⭐☆☆☆☆ · <strong>前置</strong>：<a href="../1-4-3-pandas-data/">1.4.3 Pandas 与数据处理</a></p>
 </blockquote>
-<p>"先画图，再建模。"动手训练之前，用几张图看清数据的分布、关系和离群点（这一步叫 <strong>EDA，探索性数据分析</strong>），能帮你选对模型、少走弯路。Matplotlib 是底层画笔，Seaborn 在它之上让统计图更好看更省事。</p>
 <div class="admonition abstract">
-<p class="admonition-title">学习目标</p>
+<p class="admonition-title">读完这一节，你会</p>
 <ul>
-<li>会用 Matplotlib 画折线、散点、直方图</li>
-<li>会用 Seaborn 画箱线图、热力图做数据探查</li>
-<li>能从图里读出分布形状、离群点和特征相关性</li>
+<li>用 Matplotlib 画折线、散点、直方图</li>
+<li>用 Seaborn 画箱线图和热力图来探查数据</li>
+<li>从图里读出数据的分布形状、离群点和特征间的相关性</li>
 </ul>
 </div>
-<h2 id="_1">一、直觉：它解决什么问题<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>一列数字 <code>describe()</code> 只给你均值方差；但一张直方图能立刻告诉你"它是钟形还是双峰、有没有极端离群点"。图把人脑最擅长的视觉模式识别用上了。</p>
-<h2 id="_2">二、核心用法速览<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h2 id="_1">为什么动手前要先画图<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>有句话叫"一图胜千言"，在数据分析里尤其如此。在真正训练模型之前，我们习惯先把数据画出来看看——这一步叫<strong>探索性数据分析（EDA，Exploratory Data Analysis）</strong>。</p>
+<p>为什么不直接看数字？因为光靠 <code>describe()</code> 给你的均值和方差，你很难判断数据到底长什么样。可一张直方图就能立刻告诉你：这组数据是单峰还是双峰、是对称还是偏斜、有没有几个孤零零的极端值。<strong>人脑最擅长从图像里识别模式</strong>，可视化做的就是把这份本事用起来。这一节我们用两个工具：Matplotlib 是底层画笔，Seaborn 在它之上让统计图更好看、更省事。</p>
+<h2 id="matplotlib">Matplotlib：最基础的画笔<a class="headerlink" href="#matplotlib" title="Permanent link">¶</a></h2>
+<p>Matplotlib 几乎能画任何图，最常用的是折线、散点和直方图三种：</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 
-<span class="c1"># Matplotlib：折线 / 散点 / 直方图</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>                 <span class="c1"># 折线</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>  <span class="c1"># 散点</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>              <span class="c1"># 直方图</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"x"</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"y"</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"demo"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>                    <span class="c1"># 折线图：看趋势</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>  <span class="c1"># 散点图：看关系</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>  <span class="c1"># 直方图：看分布</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"x"</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"y"</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"示例"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Seaborn：统计图更省事</span>
+<p>每画完一张图，记得加上坐标轴标签和标题——这是好习惯，能让别人（和几天后的你自己）一眼看懂图在说什么。</p>
+<h2 id="seaborn">Seaborn：让统计图更省事<a class="headerlink" href="#seaborn" title="Permanent link">¶</a></h2>
+<p>如果说 Matplotlib 是"什么都能画但要自己调"，那 Seaborn 就是"常用统计图一行搞定"。它特别适合做 EDA：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>           <span class="c1"># 直方 + 密度曲线</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>                    <span class="c1"># 箱线图：看中位数与离群点</span>
-<span class="c1"># 相关性热力图（看哪些特征相关）</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s2">"ABCD"</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"coolwarm"</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>    <span class="c1"># 直方图 + 一条平滑的密度曲线</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>             <span class="c1"># 箱线图：一眼看出中位数和离群点</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
+<p><code>histplot</code> 加上 <code>kde=True</code> 后，会在直方图上叠一条平滑曲线，分布形状看得更清楚；<code>boxplot</code> 则专门用来揪出离群点。</p>
+<p>到底哪种图看哪种信息？下面这张表帮你快速对号入座：</p>
 <table>
 <thead>
 <tr>
 <th>图类型</th>
-<th>看什么</th>
+<th>主要用来看</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>直方图 <code>hist</code></td>
-<td>单变量分布形状（单峰/双峰/偏态）</td>
+<td>直方图 <code>histplot</code></td>
+<td>单个变量的分布形状（单峰、双峰、偏斜）</td>
 </tr>
 <tr>
 <td>箱线图 <code>boxplot</code></td>
-<td>中位数、四分位、<strong>离群点</strong></td>
+<td>中位数、四分位数，以及<strong>离群点</strong></td>
 </tr>
 <tr>
 <td>散点图 <code>scatter</code></td>
-<td>两变量关系/趋势</td>
+<td>两个变量之间的关系或趋势</td>
 </tr>
 <tr>
 <td>热力图 <code>heatmap</code></td>
-<td>特征间相关性矩阵</td>
+<td>多个特征两两之间的相关性</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_3">三、实战：分布 + 离群点一眼看穿<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h2 id="_2">实战：一眼看穿分布和离群点<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>我们把"看分布"和"找离群点"合起来做一次。先故意在一组正常数据里混进几个极端值，再用直方图和箱线图并排显示：</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span><span class="o">,</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span><span class="o">,</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">300</span><span class="p">),</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]])</span>  <span class="c1"># 故意混入离群点</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">300</span><span class="p">),</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]])</span>  <span class="c1"># 混入 3 个离群点</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"分布"</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"离群点"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p>箱线图右侧那几个孤立点，就是混入的 8/9/10——这正是要在预处理里关注的离群值。</p>
-<h2 id="_4">四、常见陷阱与调试<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>你会发现，左边的直方图主体是个钟形，但右侧拖着几个孤立的小柱子；右边的箱线图则在右端标出几个单独的点——它们正是我们混进去的 8、9、10。这就是为什么在 <a href="../1-4-3-pandas-data/">1.4.3 Pandas</a> 里我们要专门关注离群值：它们常常是录入错误，会把模型带偏。</p>
+<h2 id="_3">容易踩的坑<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>忘了 <code>plt.show()</code></strong>：脚本里不调用就不显示（Colab/Notebook 里通常自动显示，可省）。</li>
-<li><strong>中文显示成方块</strong>：需设中文字体，如 <code>plt.rcParams["font.sans-serif"] = ["SimHei"]</code>，并 <code>axes.unicode_minus=False</code>。</li>
-<li><strong>图叠在一起</strong>：连续画多张要 <code>plt.figure()</code> 新建，或用 <code>subplots</code> 分轴。</li>
-<li><strong>过度装饰</strong>：competition EDA 重信息不重美观，别在配色上耗时间。</li>
+<li><strong>忘了 <code>plt.show()</code></strong>：在普通脚本里不调用它，图就不会显示（不过在 Colab 或 Notebook 里通常会自动显示，可以省略）。</li>
+<li><strong>中文显示成方块</strong>：matplotlib 默认不带中文字体，需要设置 <code>plt.rcParams["font.sans-serif"] = ["SimHei"]</code>，并把 <code>axes.unicode_minus</code> 设为 <code>False</code>。</li>
+<li><strong>多张图叠在一起</strong>：连续画好几张时，要么用 <code>plt.figure()</code> 新建画布，要么用 <code>subplots</code> 分成多个子图。</li>
+<li><strong>别在配色上耗时间</strong>：做 EDA 重在快速看清信息，不是做美工，朴素清楚就好。</li>
 </ul>
-<h2 id="_5">五、应用场景<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<ul>
-<li>训练时画 <strong>loss/accuracy 曲线</strong>判断过拟合（见 <a href="../../ch2-round1/2-1-9-model-evaluation/">2.1.9 模型评估与选择</a>）。</li>
-<li>画<strong>混淆矩阵热力图</strong>分析分类错误（见 <a href="../../ch2-round1/2-1-4-classification-metrics/">2.1.4 分类评估指标</a>）。</li>
-<li>建模前看特征分布与相关性，决定要不要标准化/去相关。</li>
-</ul>
-<h2 id="_6">六、练习题<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<h2 id="_4">它在后面会怎么用到<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>可视化会一路陪着你：训练时，你要画 <strong>loss 和准确率曲线</strong>来判断模型有没有过拟合（见 <a href="../../ch2-round1/2-1-9-model-evaluation/">2.1.9 模型评估与选择</a>）；分析分类错误时，你要画<strong>混淆矩阵的热力图</strong>（见 <a href="../../ch2-round1/2-1-4-classification-metrics/">2.1.4 分类评估指标</a>）；建模前，你还要看特征的分布和相关性，来决定要不要标准化、要不要去掉某些冗余特征。</p>
+<h2 id="_5">练习<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <details class="note">
 <summary>基础练习</summary>
 <ol>
-<li>对 <a href="../1-3-3-probability-statistics/">1.3.3 概率与统计</a> 里采样的高斯数据画直方图 + KDE，验证钟形。</li>
-<li>用散点图画 <span class="arithmatex">\(y=x^2+\text{噪声}\)</span>，直观感受非线性关系。</li>
+<li>对 <a href="../1-3-3-probability-statistics/">1.3.3 概率与统计</a> 里采样的高斯数据画一张直方图加密度曲线，亲眼验证它是钟形的。</li>
+<li>用散点图画出 <span class="arithmatex">\(y = x^2 + \text{噪声}\)</span> 的数据，直观感受一下什么叫"非线性关系"。</li>
 </ol>
 </details>
 <details class="note">
 <summary>进阶练习</summary>
 <ol>
-<li>用 <code>sns.pairplot</code> 画鸢尾花数据集各特征两两关系，按类别上色。</li>
-<li>画一条"学习率 vs 最终损失"的曲线，找出最优学习率区间。</li>
+<li>用 <code>sns.pairplot</code> 画出鸢尾花数据集里各特征两两之间的关系，并按类别上不同颜色。</li>
+<li>画一条"学习率 vs 最终损失"的曲线，从图上找出最优学习率大致在哪个区间。</li>
 </ol>
 </details>
-<h2 id="_7">七、小结与延伸阅读<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<h2 id="_6">小结<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>先 EDA 再建模</strong>：直方图看分布、箱线看离群、热力图看相关。</li>
-<li>Matplotlib 是底层，Seaborn 让统计图更省事更好看。</li>
-<li>训练曲线、混淆矩阵是日后调试的常用图。</li>
+<li><strong>先 EDA 再建模</strong>：直方图看分布、箱线图找离群点、热力图看相关性。</li>
+<li>Matplotlib 是底层画笔，Seaborn 让常用统计图一行搞定。</li>
+<li>训练曲线和混淆矩阵是你日后调试模型最常画的两种图。</li>
 </ul>
-<p>延伸：<a href="https://matplotlib.org/stable/tutorials/index.html">Matplotlib 官方教程</a>；<a href="https://seaborn.pydata.org/examples/index.html">Seaborn 官方画廊</a>。</p>
+<p>想看更多图例，可逛 <a href="https://seaborn.pydata.org/examples/index.html">Seaborn 官方画廊</a> 和 <a href="https://matplotlib.org/stable/tutorials/index.html">Matplotlib 教程</a>。</p>
 
 
 

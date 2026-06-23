@@ -891,10 +891,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么偏偏是 Python
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一、直觉：它解决什么问题
+        变量与基本类型
       
     </span>
   </a>
@@ -905,7 +916,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、核心语法速览
+        控制流：让程序学会判断和重复
       
     </span>
   </a>
@@ -916,7 +927,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、实战：统计词频
+        函数：把一段逻辑打包
       
     </span>
   </a>
@@ -927,7 +938,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、常见陷阱与调试
+        容器：列表、字典、元组、集合
       
     </span>
   </a>
@@ -938,7 +949,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、应用场景
+        推导式：一行写出一个列表
       
     </span>
   </a>
@@ -949,7 +960,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        六、练习题
+        类：把数据和行为绑在一起
       
     </span>
   </a>
@@ -960,7 +971,40 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        七、小结与延伸阅读
+        容易踩的坑
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        它在后面会怎么用到
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        小结
       
     </span>
   </a>
@@ -4085,10 +4129,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么偏偏是 Python
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一、直觉：它解决什么问题
+        变量与基本类型
       
     </span>
   </a>
@@ -4099,7 +4154,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、核心语法速览
+        控制流：让程序学会判断和重复
       
     </span>
   </a>
@@ -4110,7 +4165,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、实战：统计词频
+        函数：把一段逻辑打包
       
     </span>
   </a>
@@ -4121,7 +4176,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、常见陷阱与调试
+        容器：列表、字典、元组、集合
       
     </span>
   </a>
@@ -4132,7 +4187,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、应用场景
+        推导式：一行写出一个列表
       
     </span>
   </a>
@@ -4143,7 +4198,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        六、练习题
+        类：把数据和行为绑在一起
       
     </span>
   </a>
@@ -4154,7 +4209,40 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        七、小结与延伸阅读
+        容易踩的坑
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        它在后面会怎么用到
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        小结
       
     </span>
   </a>
@@ -4249,48 +4337,60 @@
 
 <h1 id="141-python">1.4.1 Python 基础<a class="headerlink" href="#141-python" title="Permanent link">¶</a></h1>
 <blockquote>
-<p><strong>难度</strong> ⭐☆☆☆☆ · <strong>前置</strong>：任意一门编程语言基础更佳</p>
+<p><strong>难度</strong> ⭐☆☆☆☆ · <strong>前置</strong>：有任意一门编程语言基础会更轻松</p>
 </blockquote>
-<p>Python 是 AI 的"普通话"：NumPy、Pandas、PyTorch 全是 Python 库，USAAIO 也在 Python（Colab）里考。这一节带你快速过一遍写 AI 代码会反复用到的语法，重点是<strong>够用</strong>，不求全。</p>
 <div class="admonition abstract">
-<p class="admonition-title">学习目标</p>
+<p class="admonition-title">读完这一节，你会</p>
 <ul>
-<li>熟练使用变量、控制流、函数、列表/字典与推导式</li>
-<li>能读懂并写出简单的类（后面 PyTorch 的 <code>nn.Module</code> 会用）</li>
-<li>避开新手最常踩的几个 Python 坑</li>
+<li>熟练使用变量、控制流、函数、列表和字典</li>
+<li>看懂并写出简单的类，为后面的 PyTorch 打基础</li>
+<li>避开几个最常见、最坑人的 Python 小陷阱</li>
 </ul>
 </div>
-<h2 id="_1">一、直觉：它解决什么问题<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>你不需要成为 Python 专家，只需要能<strong>流畅地把想法翻译成代码</strong>：循环遍历数据、函数封装逻辑、字典做映射。Python 语法接近自然语言，正适合快速试验模型。</p>
-<h2 id="_2">二、核心语法速览<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># 变量与类型（动态类型，无需声明）</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>                 <span class="c1"># int</span>
-<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>              <span class="c1"># float</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s2">"cat"</span>           <span class="c1"># str</span>
-<span class="n">ok</span> <span class="o">=</span> <span class="kc">True</span>              <span class="c1"># bool</span>
-
-<span class="c1"># 控制流（靠缩进分块，不是大括号）</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>     <span class="c1"># 0,1,2</span>
+<h2 id="python">为什么偏偏是 Python<a class="headerlink" href="#python" title="Permanent link">¶</a></h2>
+<p>学 AI 为什么要先学 Python？因为它几乎是这个领域的"普通话"。你后面要用的 NumPy、Pandas、PyTorch，全都是 Python 库；USAAIO 的考试也是在 Python 环境（Colab）里进行的。换句话说，<strong>Python 是你和所有 AI 工具对话的唯一语言</strong>。</p>
+<p>好消息是，你不需要成为 Python 专家。我们的目标只有一个——能流畅地把脑子里的想法翻译成代码。Python 的语法非常接近自然语言，正适合快速试验各种模型。下面我们就按"够用就好"的原则，把写 AI 代码会反复用到的那些语法过一遍。</p>
+<h2 id="_1">变量与基本类型<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>和很多语言不同，Python 是<strong>动态类型</strong>的：你不需要提前声明变量是什么类型，赋值的时候它自己就知道了。</p>
+<div class="highlight"><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>           <span class="c1"># 整数 int</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>        <span class="c1"># 小数 float</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">"cat"</span>     <span class="c1"># 字符串 str</span>
+<span class="n">ok</span> <span class="o">=</span> <span class="kc">True</span>        <span class="c1"># 布尔值 bool</span>
+</code></pre></div>
+<p>这种"拿来就用"的特性让写代码很快，但也意味着你得自己心里有数：一个变量现在到底装的是数字还是文字。</p>
+<h2 id="_2">控制流：让程序学会判断和重复<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>程序要做决策、要重复劳动，靠的就是 <code>if</code> 和 <code>for</code>。Python 有个鲜明的特点：<strong>它用缩进来划分代码块</strong>，而不是大括号。</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>        <span class="c1"># 依次取 0、1、2</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">"偶"</span><span class="p">)</span>
-
-<span class="c1"># 函数</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">"是偶数"</span><span class="p">)</span>
+</code></pre></div>
+<p>这段代码会把 0 到 2 里的偶数挑出来打印。注意 <code>if</code> 下面那行往里缩进了——缩进对不齐，Python 是会直接报错的。</p>
+<h2 id="_3">函数：把一段逻辑打包<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>当一段逻辑要反复使用时，就把它装进函数里，起个名字，以后一行调用即可。</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 
-<span class="c1"># 列表 / 字典 / 元组 / 集合</span>
-<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"cat"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>             <span class="c1"># 不可变</span>
-<span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>       <span class="c1"># 去重 -&gt; {1,2,3}</span>
-
-<span class="c1"># 列表推导式（AI 代码里随处可见）</span>
-<span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>      <span class="c1"># [0,1,4,9,16]</span>
-<span class="n">even</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nums</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>   <span class="c1"># [2]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>          <span class="c1"># 25</span>
 </code></pre></div>
-<p>类用来封装"数据 + 行为"，PyTorch 的模型都是类：</p>
+<p>函数让代码不重复、好维护。后面你训练模型时，会把"训练一轮""评估准确率"这类操作都包成函数。</p>
+<h2 id="_4">容器：列表、字典、元组、集合<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>数据多了就需要"容器"来装。Python 有四个最常用的，各有各的脾气：</p>
+<div class="highlight"><pre><span></span><code><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>              <span class="c1"># 列表 list：有序、可改</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"cat"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>     <span class="c1"># 字典 dict：键 → 值的映射</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>                    <span class="c1"># 元组 tuple：有序、但不可改</span>
+<span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>             <span class="c1"># 集合 set：自动去重，得到 {1, 2, 3}</span>
+</code></pre></div>
+<p>其中<strong>列表</strong>和<strong>字典</strong>是你用得最多的两个：列表适合按顺序存一串东西，字典适合做"查表"（比如把类别名映射成编号）。</p>
+<h2 id="_5">推导式：一行写出一个列表<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<p>推导式是 Python 特别优雅的一个语法，在 AI 代码里随处可见。它能让你用一行，从一个序列变出另一个序列。</p>
+<div class="highlight"><pre><span></span><code><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>        <span class="c1"># [0, 1, 4, 9, 16]</span>
+<span class="n">even</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nums</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>     <span class="c1"># 只留下偶数：[2]</span>
+</code></pre></div>
+<p>读它的时候从中间的 <code>for</code> 看起：先遍历 <code>range(5)</code>，再把每个 <code>x</code> 变成 <code>x*x</code>。比起写一个三四行的 <code>for</code> 循环，推导式既短又清楚。</p>
+<h2 id="_6">类：把数据和行为绑在一起<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<p>最后是<strong>类</strong>。它把"数据"和"对这些数据的操作"打包成一个整体。你现在可能觉得用处不大，但请一定看懂它——因为 PyTorch 里的每一个模型，都是用类写出来的。</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Counter</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>   <span class="c1"># 构造函数</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>   <span class="c1"># 构造函数，创建对象时自动调用</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="n">start</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="n">x</span>
@@ -4299,52 +4399,38 @@
 <span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>        <span class="c1"># 5</span>
 </code></pre></div>
-<h2 id="_3">三、实战：统计词频<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">"cat dog cat bird dog cat"</span>
-<span class="n">freq</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
-    <span class="n">freq</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="n">freq</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>     <span class="c1"># get 给默认值，避免 KeyError</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span>            <span class="c1"># {'cat': 3, 'dog': 2, 'bird': 1}</span>
-
-<span class="c1"># 用推导式 + sorted 取最高频</span>
-<span class="n">top</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">freq</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">top</span><span class="p">)</span>             <span class="c1"># ('cat', 3)</span>
-</code></pre></div>
-<h2 id="_4">四、常见陷阱与调试<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>这里 <code>Counter</code> 把"当前计数"这个数据和"加一个数"这个行为绑在了一起。等你写 <code>class Net(nn.Module)</code> 时，用的就是同一套语法。</p>
+<h2 id="_7">容易踩的坑<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>可变默认参数</strong>：<code>def f(x, acc=[])</code> 的 <code>[]</code> 只创建一次，会跨调用累积！默认用 <code>None</code>：<code>def f(x, acc=None): acc = acc or []</code>。</li>
-<li><strong><code>is</code> vs <code>==</code></strong>：<code>==</code> 比值，<code>is</code> 比身份（是否同一对象）。判断相等永远用 <code>==</code>。</li>
-<li><strong>整除与浮点</strong>：<code>5 / 2 == 2.5</code>，<code>5 // 2 == 2</code>（整除）；别混。</li>
-<li><strong>浅拷贝</strong>：<code>b = a</code> 只是同一个列表的别名，改 <code>b</code> 会动 <code>a</code>；要副本用 <code>a.copy()</code> 或 <code>list(a)</code>。</li>
-<li><strong>缩进</strong>：Tab 与空格混用会报 <code>IndentationError</code>，统一用 4 个空格。</li>
+<li><strong>可变默认参数</strong>：把默认值写成 <code>def f(x, acc=[])</code> 时，那个空列表只会被创建一次，于是多次调用会把结果偷偷累加在一起。正确做法是默认用 <code>None</code>，进函数再新建：<code>def f(x, acc=None): acc = acc or []</code>。</li>
+<li><strong><code>is</code> 和 <code>==</code> 别混</strong>：<code>==</code> 比较的是"值是否相等"，<code>is</code> 比较的是"是不是同一个对象"。判断相等永远用 <code>==</code>。</li>
+<li><strong>整除和普通除法</strong>：<code>5 / 2</code> 得到 <code>2.5</code>，而 <code>5 // 2</code> 得到 <code>2</code>（整除取整），别用错。</li>
+<li><strong>赋值不是复制</strong>：<code>b = a</code> 只是给同一个列表起了别名，改 <code>b</code> 会连 <code>a</code> 一起改。想要独立副本，用 <code>a.copy()</code>。</li>
 </ul>
-<h2 id="_5">五、应用场景<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<ul>
-<li>后续所有代码都是 Python：<a href="../1-4-2-numpy-tensors/">1.4.2 NumPy</a>、<a href="../1-4-3-pandas-data/">1.4.3 Pandas</a>、PyTorch 训练循环。</li>
-<li><code>nn.Module</code> 子类化、<code>Dataset</code> 自定义、配置字典——都建立在本节语法上。</li>
-</ul>
-<h2 id="_6">六、练习题<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<h2 id="_8">它在后面会怎么用到<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
+<p>这一节是整个网站所有代码的地基。接下来的 <a href="../1-4-2-numpy-tensors/">1.4.2 NumPy</a>、<a href="../1-4-3-pandas-data/">1.4.3 Pandas</a>，以及之后所有的 PyTorch 训练代码，都建立在这些语法之上。尤其是"类"，你写第一个神经网络时就会立刻用到。</p>
+<h2 id="_9">练习<a class="headerlink" href="#_9" title="Permanent link">¶</a></h2>
 <details class="note">
 <summary>基础练习</summary>
 <ol>
-<li>写函数 <code>count_vowels(s)</code> 返回字符串里元音字母个数（用集合判断）。</li>
-<li>用字典推导式把 <code>["a","bb","ccc"]</code> 转成 <code>{"a":1,"bb":2,"ccc":3}</code>（键→长度）。</li>
+<li>写一个函数 <code>count_vowels(s)</code>，返回字符串里元音字母的个数（提示：用集合判断某个字母是不是元音）。</li>
+<li>用字典推导式，把 <code>["a", "bb", "ccc"]</code> 变成 <code>{"a": 1, "bb": 2, "ccc": 3}</code>，也就是"字符串 → 它的长度"。</li>
 </ol>
 </details>
 <details class="note">
 <summary>进阶练习</summary>
 <ol>
-<li>实现一个 <code>Stack</code> 类，支持 <code>push/pop/peek/is_empty</code>。</li>
-<li>用一行推导式生成九九乘法表的字符串列表，并打印成方阵。</li>
+<li>实现一个 <code>Stack</code>（栈）类，支持 <code>push</code>、<code>pop</code>、<code>peek</code>、<code>is_empty</code> 四个操作。</li>
+<li>用一行推导式生成九九乘法表的字符串列表，再把它打印成整齐的方阵。</li>
 </ol>
 </details>
-<h2 id="_7">七、小结与延伸阅读<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<h2 id="_10">小结<a class="headerlink" href="#_10" title="Permanent link">¶</a></h2>
 <ul>
-<li>Python 动态类型、靠缩进分块、生态强大，是 AI 默认语言。</li>
-<li><strong>推导式 + 字典 + 类</strong>是写模型代码的三件套。</li>
-<li>记牢可变默认参数、<code>is</code>/<code>==</code>、浅拷贝三个经典坑。</li>
+<li>Python 动态类型、靠缩进分块、生态强大，是 AI 领域的默认语言。</li>
+<li><strong>推导式、字典、类</strong>是写模型代码的三件套，尤其类是 PyTorch 的基础。</li>
+<li>记牢可变默认参数、<code>is</code>/<code>==</code>、赋值不是复制这三个经典坑，能帮你少掉很多头发。</li>
 </ul>
-<p>延伸：<a href="https://docs.python.org/zh-cn/3/tutorial/">Python 官方教程</a>；<a href="https://realpython.com/">Real Python</a> 入门系列。</p>
+<p>想再扎实一点，可以过一遍 <a href="https://docs.python.org/zh-cn/3/tutorial/">Python 官方教程</a> 的前几章。</p>
 
 
 

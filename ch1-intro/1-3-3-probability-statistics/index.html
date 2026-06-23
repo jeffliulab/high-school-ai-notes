@@ -765,10 +765,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 为什么离不开概率
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一、直觉：它解决什么问题
+        随机变量、期望、方差：先立定义
       
     </span>
   </a>
@@ -779,7 +790,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、原理与数学推导
+        两个最该认识的分布
       
     </span>
   </a>
@@ -790,7 +801,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、代码实现
+        贝叶斯公式：由果推因
       
     </span>
   </a>
@@ -801,7 +812,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、常见陷阱与调试
+        极大似然估计：模型怎么从数据里学参数
       
     </span>
   </a>
@@ -812,7 +823,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、应用场景
+        动手：采样与估计
       
     </span>
   </a>
@@ -823,7 +834,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        六、练习题
+        容易踩的坑
       
     </span>
   </a>
@@ -834,7 +845,29 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        七、小结与延伸阅读
+        它在后面会怎么用到
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        小结
       
     </span>
   </a>
@@ -4085,10 +4118,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 为什么离不开概率
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一、直觉：它解决什么问题
+        随机变量、期望、方差：先立定义
       
     </span>
   </a>
@@ -4099,7 +4143,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、原理与数学推导
+        两个最该认识的分布
       
     </span>
   </a>
@@ -4110,7 +4154,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、代码实现
+        贝叶斯公式：由果推因
       
     </span>
   </a>
@@ -4121,7 +4165,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、常见陷阱与调试
+        极大似然估计：模型怎么从数据里学参数
       
     </span>
   </a>
@@ -4132,7 +4176,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、应用场景
+        动手：采样与估计
       
     </span>
   </a>
@@ -4143,7 +4187,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        六、练习题
+        容易踩的坑
       
     </span>
   </a>
@@ -4154,7 +4198,29 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        七、小结与延伸阅读
+        它在后面会怎么用到
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        小结
       
     </span>
   </a>
@@ -4251,96 +4317,109 @@
 <blockquote>
 <p><strong>难度</strong> ⭐⭐☆☆☆ · <strong>前置</strong>：<a href="../1-3-2-calculus-gradients/">1.3.2 微积分与梯度</a></p>
 </blockquote>
-<p>机器学习是在<strong>不确定性</strong>下做决策：数据有噪声、预测有把握程度。概率给了我们度量不确定性的语言，统计给了我们从数据里"反推"规律的工具。很多损失函数（比如交叉熵）其实就是概率公式的伪装。</p>
 <div class="admonition abstract">
-<p class="admonition-title">学习目标</p>
+<p class="admonition-title">读完这一节，你会</p>
 <ul>
-<li>理解随机变量、期望、方差，认识伯努利与高斯分布</li>
-<li>会用贝叶斯公式做"由果推因"的更新</li>
-<li>理解极大似然估计（MLE），知道它如何导出常见损失函数</li>
+<li>理解随机变量、期望、方差，认识伯努利和高斯两个核心分布</li>
+<li>会用贝叶斯公式做"由果推因"的推断</li>
+<li>明白极大似然估计是什么，以及它如何变成我们常用的损失函数</li>
 </ul>
 </div>
-<h2 id="_1">一、直觉：它解决什么问题<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>模型输出"这张图是猫的概率 0.92"——这个 0.92 就是概率。训练时我们问："什么样的参数，最可能产生我看到的这批数据？"这正是<strong>极大似然</strong>的思路。</p>
-<h2 id="_2">二、原理与数学推导<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p><strong>随机变量与期望/方差</strong>：离散变量的期望 <span class="arithmatex">\(\mathbb{E}[X]=\sum_x x\,p(x)\)</span>，方差 <span class="arithmatex">\(\mathrm{Var}(X)=\mathbb{E}[(X-\mathbb{E}X)^2]\)</span>。</p>
-<p><strong>两个核心分布</strong>：</p>
+<h2 id="ai">AI 为什么离不开概率<a class="headerlink" href="#ai" title="Permanent link">¶</a></h2>
+<p>机器学习从头到尾都在和<strong>不确定性</strong>打交道。数据里有噪声，预测也从来不是百分百确定——一个好的模型不会武断地说"这是猫"，而是说"这是猫的概率为 0.92"。那个 0.92，就是概率在起作用。</p>
+<p>更进一步说，训练模型时我们其实一直在问一个问题：<strong>什么样的参数，最有可能产生我手上看到的这批数据？</strong> 这个朴素的问题，正是统计里"极大似然估计"的核心思想，也是大半个机器学习的出发点。所以，把概率统计这门语言掌握好，你才能看懂损失函数背后的逻辑，而不只是机械地调用它们。</p>
+<h2 id="_1">随机变量、期望、方差：先立定义<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>我们先把三个最基本的量定义清楚。</p>
+<p><strong>随机变量</strong>就是一个"取值带有随机性"的量，比如抛一次硬币的结果、一张图被预测成猫的概率。它的<strong>期望</strong> <span class="arithmatex">\(\mathbb{E}[X]\)</span> 是"长期平均下来的取值"，对离散情况就是每个取值乘以它的概率再求和：<span class="arithmatex">\(\mathbb{E}[X]=\sum_x x\,p(x)\)</span>。</p>
+<p>光有平均还不够，我们还想知道数据"散不散"。<strong>方差</strong> <span class="arithmatex">\(\mathrm{Var}(X)=\mathbb{E}[(X-\mathbb{E}X)^2]\)</span> 衡量的就是取值围绕平均值的波动大小：方差越大，数据越分散；方差越小，数据越集中。期望和方差合起来，就能粗略刻画一个随机变量的"性格"。</p>
+<h2 id="_2">两个最该认识的分布<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>实际中分布有很多种，但对入门来说，先死死记住下面这两个就够用了：</p>
 <table>
 <thead>
 <tr>
 <th>分布</th>
-<th>用途</th>
-<th>关键量</th>
+<th>用在哪</th>
+<th>关键参数</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>伯努利 <span class="arithmatex">\(\mathrm{Bern}(p)\)</span></td>
-<td>二分类标签（0/1）</td>
-<td><span class="arithmatex">\(P(X=1)=p\)</span></td>
+<td><strong>伯努利分布</strong> <span class="arithmatex">\(\mathrm{Bern}(p)\)</span></td>
+<td>描述二分类标签（是/否、0/1）</td>
+<td>取 1 的概率 <span class="arithmatex">\(p\)</span></td>
 </tr>
 <tr>
-<td>高斯 <span class="arithmatex">\(\mathcal{N}(\mu,\sigma^2)\)</span></td>
-<td>连续噪声、初始化</td>
+<td><strong>高斯分布</strong>（正态分布）<span class="arithmatex">\(\mathcal{N}(\mu,\sigma^2)\)</span></td>
+<td>描述连续噪声、初始化权重</td>
 <td>均值 <span class="arithmatex">\(\mu\)</span>、方差 <span class="arithmatex">\(\sigma^2\)</span></td>
 </tr>
 </tbody>
 </table>
-<p><strong>贝叶斯公式</strong>（由果推因）：</p>
+<p>伯努利分布你可以理解成"一次抛硬币"，只有两种结果；它天然适合表示二分类问题的答案。高斯分布就是那条经典的"钟形曲线"，自然界和工程里大量的随机现象都近似服从它，所以神经网络初始化权重、给数据加噪声时都离不开它。</p>
+<h2 id="_3">贝叶斯公式：由果推因<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>很多时候我们看到的是"结果"，想反推"原因"。贝叶斯公式正是干这个的。</p>
+<p>它的形式是：</p>
 <div class="arithmatex">\[P(A\mid B)=\frac{P(B\mid A)\,P(A)}{P(B)}.\]</div>
-<p><strong>极大似然估计 MLE</strong>：给定独立数据 <span class="arithmatex">\(\{x_i\}\)</span>，选参数 <span class="arithmatex">\(\theta\)</span> 使似然 <span class="arithmatex">\(\prod_i p(x_i;\theta)\)</span> 最大。取对数把连乘变连加，更好优化：</p>
+<p>换成大白话：在已经观察到 <span class="arithmatex">\(B\)</span> 发生的前提下，想知道 <span class="arithmatex">\(A\)</span> 发生的概率，可以用"<span class="arithmatex">\(A\)</span> 本来的概率"乘上"<span class="arithmatex">\(A\)</span> 发生时 <span class="arithmatex">\(B\)</span> 有多容易出现"，再做个归一化。垃圾邮件识别、疾病检测这类"看到证据、推断真相"的任务，背后都是它。</p>
+<h2 id="_4">极大似然估计：模型怎么从数据里学参数<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>现在来到这一节最重要的思想——<strong>极大似然估计（MLE）</strong>。</p>
+<p>它的定义是：给定一批独立的数据 <span class="arithmatex">\(\{x_i\}\)</span>，我们选择那个让"这批数据出现的可能性"最大的参数 <span class="arithmatex">\(\theta\)</span>。由于很多概率连乘起来会变成极小的数、不好处理，我们通常取对数，把连乘变成连加：</p>
 <div class="arithmatex">\[\hat\theta=\arg\max_\theta \sum_i \log p(x_i;\theta).\]</div>
+<p>为什么要花力气讲它？因为<strong>我们天天用的交叉熵损失，本质上就是"最大化对数似然"的另一种写法</strong>。理解了 MLE，你就明白了损失函数不是凭空设计出来的，而是有概率含义的。</p>
 <div class="admonition example">
-<p class="admonition-title">例 1：抛硬币的 MLE</p>
-<p>抛 <span class="arithmatex">\(n\)</span> 次出现 <span class="arithmatex">\(k\)</span> 次正面。似然 <span class="arithmatex">\(L(p)=p^k(1-p)^{n-k}\)</span>，对 <span class="arithmatex">\(\log L\)</span> 求导置零，解得 <span class="arithmatex">\(\hat p=\dfrac{k}{n}\)</span>——<strong>最可能的概率就是观测频率</strong>。最大化对数似然 = 最小化交叉熵，这就是分类损失的来源。</p>
+<p class="admonition-title">例 1：抛硬币的极大似然</p>
+<p>抛了 <span class="arithmatex">\(n\)</span> 次硬币，出现 <span class="arithmatex">\(k\)</span> 次正面。这批结果出现的似然是 <span class="arithmatex">\(L(p)=p^k(1-p)^{n-k}\)</span>。我们想找让 <span class="arithmatex">\(L\)</span> 最大的 <span class="arithmatex">\(p\)</span>：对 <span class="arithmatex">\(\log L\)</span> 求导、令它为零，解出来正是 <span class="arithmatex">\(\hat p=\dfrac{k}{n}\)</span>。换句话说，<strong>最合理的概率估计，就是观测到的频率</strong>——这个朴素的结论，正是从 MLE 严格推出来的。</p>
 </div>
-<h2 id="_3">三、代码实现<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h2 id="_5">动手：采样与估计<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<p>我们用代码把"从分布采样，再从样本反推参数"这个统计的核心动作走一遍。</p>
+<p>先从一个均值为 5、标准差为 2 的高斯分布里采一万个样本，再用这些样本反过来估计它的均值和方差：</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="c1"># 从高斯分布采样，再用样本反估均值/方差（统计的核心动作）</span>
 <span class="n">samples</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">samples</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">samples</span><span class="o">.</span><span class="n">var</span><span class="p">())</span>   <span class="c1"># ≈ 5.0, ≈ 4.0</span>
-
-<span class="c1"># 抛硬币的 MLE：估计的 p 就是正面频率</span>
-<span class="n">flips</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+</code></pre></div>
+<p>你会看到估出来的均值接近 5、方差接近 4（也就是 <span class="arithmatex">\(2^2\)</span>）——样本越多，估计越准，这正是统计的威力。</p>
+<p>再用代码验证一下刚才的抛硬币结论。我们用一枚"正面概率 0.3"的硬币抛一千次，看看 MLE 估出来的 <span class="arithmatex">\(\hat p\)</span> 是不是就是正面频率：</p>
+<div class="highlight"><pre><span></span><code><span class="n">flips</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"MLE p̂ ="</span><span class="p">,</span> <span class="n">flips</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>          <span class="c1"># ≈ 0.3</span>
 </code></pre></div>
-<h2 id="_4">四、常见陷阱与调试<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>结果确实贴近 0.3。这就把"最大似然 = 用频率估概率"这件事，从公式落到了代码上。</p>
+<h2 id="_6">容易踩的坑<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>概率密度 ≠ 概率</strong>：连续分布里 <span class="arithmatex">\(p(x)\)</span> 可以大于 1，只有积分才是概率。</li>
-<li><strong>数值下溢</strong>：很多概率连乘会趋近 0，<strong>永远在对数空间计算</strong>（<code>np.log</code>、<code>logsumexp</code>）。</li>
-<li><strong>独立性假设</strong>：朴素贝叶斯假设特征独立，现实常不成立，但仍常奏效——别误以为它"严格正确"。</li>
-<li><strong>样本太少</strong>：用频率估概率时，<span class="arithmatex">\(n\)</span> 小则估计方差大，注意平滑（如拉普拉斯平滑）。</li>
+<li><strong>概率密度不是概率</strong>：对连续分布，<span class="arithmatex">\(p(x)\)</span> 的值可以大于 1，只有对它做积分才是概率。别被一个"大于 1 的密度值"吓到。</li>
+<li><strong>连乘会下溢</strong>：很多概率相乘会迅速趋近于 0，超出浮点精度。所以我们<strong>永远在对数空间里计算</strong>，用 <code>np.log</code> 把连乘变连加。</li>
+<li><strong>独立性假设要当心</strong>：朴素贝叶斯假设各特征相互独立，现实里常常不成立，但它依然常常好用——别误以为它"严格正确"。</li>
+<li><strong>样本太少别轻信</strong>：用频率估概率时，样本量小则估计的波动很大，必要时要做平滑处理。</li>
 </ul>
-<h2 id="_5">五、应用场景<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<h2 id="_7">它在后面会怎么用到<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>交叉熵损失</strong> = 负对数似然，分类训练的标准损失（见 <a href="../../ch2-round1/2-1-3-logistic-regression/">2.1.3 逻辑回归与分类</a>）。</li>
-<li><strong>高斯分布</strong>用于权重初始化与加噪数据增强（见 <a href="../../ch2-round1/2-2-5-optimization-regularization/">2.2.5 优化与正则化</a>）。</li>
-<li><strong>贝叶斯思想</strong>贯穿朴素贝叶斯分类器与不确定性估计。</li>
+<li><strong>交叉熵损失</strong>其实就是负的对数似然，是分类任务的标准损失（见 <a href="../../ch2-round1/2-1-3-logistic-regression/">2.1.3 逻辑回归与分类</a>）。</li>
+<li><strong>高斯分布</strong>用于神经网络的权重初始化，以及给数据加噪声做增强（见 <a href="../../ch2-round1/2-2-5-optimization-regularization/">2.2.5 优化与正则化</a>）。</li>
+<li><strong>贝叶斯思想</strong>贯穿朴素贝叶斯分类器，以及对预测做不确定性估计的各种方法。</li>
 </ul>
-<h2 id="_6">六、练习题<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<h2 id="_8">练习<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
 <details class="note">
 <summary>基础练习</summary>
 <ol>
-<li>一个袋子里 70% 红球。已知"取出的是大球"，且大球里红球占 50%、所有球 40% 是大球，求 <span class="arithmatex">\(P(\text{红}\mid\text{大})\)</span>。</li>
-<li>用 NumPy 采样 <span class="arithmatex">\(\mathcal{N}(0,1)\)</span> 一万次，画直方图（见 <a href="../1-4-4-visualization/">1.4.4 数据可视化</a>）验证钟形。</li>
+<li>一个袋子里 70% 是红球。已知"取出的是大球"，而大球里红球占一半、全部球里 40% 是大球，用贝叶斯公式求"取出的是红球"的概率 <span class="arithmatex">\(P(\text{红}\mid\text{大})\)</span>。</li>
+<li>用 NumPy 从标准正态分布 <span class="arithmatex">\(\mathcal{N}(0,1)\)</span> 采样一万次，画出直方图（方法见 <a href="../1-4-4-visualization/">1.4.4 数据可视化</a>），亲眼验证它是钟形的。</li>
 </ol>
 </details>
 <details class="note">
 <summary>进阶练习</summary>
 <ol>
-<li>推导高斯分布的 MLE，证明 <span class="arithmatex">\(\hat\mu\)</span> 是样本均值、<span class="arithmatex">\(\hat\sigma^2\)</span> 是样本方差。</li>
-<li>实现一个朴素贝叶斯垃圾邮件分类器（词袋 + 拉普拉斯平滑），在对数空间累加。</li>
+<li>推导高斯分布的极大似然估计，证明 <span class="arithmatex">\(\hat\mu\)</span> 恰好是样本均值、<span class="arithmatex">\(\hat\sigma^2\)</span> 恰好是样本方差。</li>
+<li>实现一个朴素贝叶斯垃圾邮件分类器（用词袋特征加拉普拉斯平滑），记得在对数空间里累加概率，避免下溢。</li>
 </ol>
 </details>
-<h2 id="_7">七、小结与延伸阅读<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<h2 id="_9">小结<a class="headerlink" href="#_9" title="Permanent link">¶</a></h2>
 <ul>
-<li>概率度量不确定性；<strong>期望/方差/分布</strong>是基本语言。</li>
-<li><strong>贝叶斯</strong>做"由果推因"，<strong>MLE</strong>用"最可能产生数据"来选参数。</li>
-<li>交叉熵损失就是负对数似然——损失函数常是概率的化身。</li>
+<li>概率是度量不确定性的语言，<strong>期望、方差、分布</strong>是它的基本词汇。</li>
+<li><strong>贝叶斯</strong>做"由果推因"，<strong>极大似然</strong>用"最可能产生数据"的原则来选参数。</li>
+<li>我们常用的交叉熵损失，就是负对数似然的化身——损失函数背后往往藏着概率。</li>
 </ul>
-<p>延伸：<a href="https://mml-book.github.io/"><em>Mathematics for Machine Learning</em></a> 第 6 章；可汗学院概率统计。</p>
+<p>想系统补一补，可看 <a href="https://mml-book.github.io/"><em>Mathematics for Machine Learning</em></a> 第 6 章，或可汗学院的概率统计课程。</p>
 
 
 

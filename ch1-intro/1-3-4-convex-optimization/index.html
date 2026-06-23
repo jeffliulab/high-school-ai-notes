@@ -796,7 +796,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一、直觉：它解决什么问题
+        训练，就是在找损失的最低点
       
     </span>
   </a>
@@ -807,7 +807,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、原理与数学推导
+        凸函数和非凸函数：先给定义，再看图
       
     </span>
   </a>
@@ -818,7 +818,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、代码实现
+        梯度下降：怎么一步步走下去
       
     </span>
   </a>
@@ -829,7 +829,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、常见陷阱与调试
+        动手：实现梯度下降，并让学习率"作妖"
       
     </span>
   </a>
@@ -840,7 +840,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、应用场景
+        容易踩的坑
       
     </span>
   </a>
@@ -851,7 +851,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        六、练习题
+        它在后面会怎么用到
       
     </span>
   </a>
@@ -862,7 +862,18 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        七、小结与延伸阅读
+        练习
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        小结
       
     </span>
   </a>
@@ -4088,7 +4099,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一、直觉：它解决什么问题
+        训练，就是在找损失的最低点
       
     </span>
   </a>
@@ -4099,7 +4110,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、原理与数学推导
+        凸函数和非凸函数：先给定义，再看图
       
     </span>
   </a>
@@ -4110,7 +4121,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、代码实现
+        梯度下降：怎么一步步走下去
       
     </span>
   </a>
@@ -4121,7 +4132,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、常见陷阱与调试
+        动手：实现梯度下降，并让学习率"作妖"
       
     </span>
   </a>
@@ -4132,7 +4143,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、应用场景
+        容易踩的坑
       
     </span>
   </a>
@@ -4143,7 +4154,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        六、练习题
+        它在后面会怎么用到
       
     </span>
   </a>
@@ -4154,7 +4165,18 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        七、小结与延伸阅读
+        练习
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        小结
       
     </span>
   </a>
@@ -4251,93 +4273,99 @@
 <blockquote>
 <p><strong>难度</strong> ⭐⭐⭐☆☆ · <strong>前置</strong>：<a href="../1-3-2-calculus-gradients/">1.3.2 微积分与梯度</a></p>
 </blockquote>
-<p>"训练模型"="最小化损失函数"。如果损失是<strong>凸函数</strong>（碗形），随便从哪下山都能到全局最低；如果是非凸（坑坑洼洼），就可能卡在局部最低。理解这点，你才知道学习率为什么这么关键。</p>
 <div class="admonition abstract">
-<p class="admonition-title">学习目标</p>
+<p class="admonition-title">读完这一节，你会</p>
 <ul>
-<li>说清凸函数 vs 非凸函数的区别与后果</li>
-<li>写出梯度下降的更新公式，理解学习率 <span class="arithmatex">\(\eta\)</span> 的作用</li>
-<li>能用 NumPy 实现一维梯度下降，并复现"学习率过大→发散"</li>
+<li>分得清凸函数和非凸函数，明白它们对训练意味着什么</li>
+<li>写得出梯度下降的更新公式，理解学习率为什么是头号旋钮</li>
+<li>能用 NumPy 实现一维梯度下降，并亲手复现"学习率过大就发散"</li>
 </ul>
 </div>
-<h2 id="_1">一、直觉：它解决什么问题<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>把损失想成地形。<strong>凸</strong>就是一个标准的碗：只有一个最低点，沿坡往下一定到底。<strong>非凸</strong>则有很多小坑，下山可能停在某个小坑（局部最优）而非真正谷底。</p>
+<h2 id="_1">训练，就是在找损失的最低点<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>我们已经反复说过，"训练模型"等价于"把损失函数降到最小"。但这件事好不好办，很大程度上取决于损失函数长什么样。</p>
+<p>如果损失函数是一个标准的"碗"，那就太省心了——不管你从哪里开始往下走，最后都会滑到同一个、也是唯一的谷底。可如果损失函数坑坑洼洼、有好多个小坑，那你下山时就可能停在某个小坑里，误以为到底了，其实旁边还有更深的谷。前者我们叫<strong>凸</strong>，后者叫<strong>非凸</strong>。理解这两者的区别，你才会明白后面调参时为什么学习率这么关键。</p>
+<h2 id="_2">凸函数和非凸函数：先给定义，再看图<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>我们先把定义给出来。一个函数是<strong>凸函数</strong>，指的是：对它图像上任意两点连一条线段，这条线段永远不会落到函数曲线的下方。写成公式就是，对任意两点和任意 <span class="arithmatex">\(\lambda\in[0,1]\)</span>，</p>
+<div class="arithmatex">\[f(\lambda x+(1-\lambda)y)\le \lambda f(x)+(1-\lambda)f(y).\]</div>
+<p>这个定义不必死记，记住它带来的那个绝妙性质就好：<strong>凸函数的任何一个局部最低点，一定就是全局最低点。</strong> 也就是说，只要你能往下走，就不怕走错地方。非凸函数则没有这个保证，下面这张图把两者的差别画了出来：</p>
 <div class="diagram">
 <svg viewBox="0 0 360 170" font-family="-apple-system, 'Segoe UI', sans-serif">
-  <!-- convex -->
   <path d="M30 30 Q95 185 160 30" fill="none" stroke="var(--dia-green)" stroke-width="2"></path>
   <circle cx="95" cy="118" r="5" fill="var(--dia-accent)"></circle>
-  <text x="55" y="150" font-size="12" fill="var(--dia-stroke-soft)">凸：唯一最低点</text>
-  <!-- nonconvex -->
+  <text x="48" y="150" font-size="12" fill="var(--dia-stroke-soft)">凸：只有一个最低点</text>
   <path d="M205 40 C225 120 245 60 265 100 S300 150 330 50" fill="none" stroke="var(--dia-blue)" stroke-width="2"></path>
   <circle cx="245" cy="92" r="5" fill="var(--dia-accent)"></circle>
-  <text x="225" y="150" font-size="12" fill="var(--dia-stroke-soft)">非凸：多个局部坑</text>
+  <text x="222" y="150" font-size="12" fill="var(--dia-stroke-soft)">非凸：有多个坑</text>
 </svg>
 </div>
-<p class="figure-caption">图：凸函数只有一个全局最低点；非凸函数可能让梯度下降卡在局部最低。</p>
+<p class="figure-caption">凸函数只有一个全局最低点；非凸函数可能让你停在某个局部的小坑里。</p>
 
-<h2 id="_2">二、原理与数学推导<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p><strong>凸函数定义</strong>：对任意两点和 <span class="arithmatex">\(\lambda\in[0,1]\)</span>，</p>
-<div class="arithmatex">\[f(\lambda x+(1-\lambda)y)\le \lambda f(x)+(1-\lambda)f(y),\]</div>
-<p>直观就是"两点连线不低于函数曲线"。凸函数的<strong>任何局部最小都是全局最小</strong>。</p>
-<p><strong>梯度下降</strong>：从当前参数沿负梯度走一步，</p>
-<div class="arithmatex">\[\theta_{t+1}=\theta_t-\eta\,\nabla f(\theta_t),\]</div>
-<p>其中<strong>学习率</strong> <span class="arithmatex">\(\eta\)</span> 决定步长：太小收敛慢，太大会越过谷底来回震荡甚至发散。</p>
+<h2 id="_3">梯度下降：怎么一步步走下去<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>知道了要往低处走，具体怎么走？答案就是上一节那个"下山"动作的数学版——<strong>梯度下降</strong>。它的更新公式是：</p>
+<div class="arithmatex">\[\theta_{t+1}=\theta_t-\eta\,\nabla f(\theta_t).\]</div>
+<p>读一遍：新的参数 = 旧的参数 − 学习率 × 当前的梯度。梯度告诉你"哪个方向上坡最陡"，前面加个负号就掉头朝下坡走；而那个 <span class="arithmatex">\(\eta\)</span>，叫<strong>学习率</strong>，决定你每一步迈多大。</p>
+<p>学习率这个旋钮特别关键。<strong>它太小，你会走得极慢，半天到不了谷底；它太大，你又会一脚迈过谷底，在两边来回横跳，甚至越跳越远、彻底发散。</strong> 后面我们会用代码亲眼看到这两种情形。</p>
 <div class="admonition example">
-<p class="admonition-title">例 1：手推一步</p>
-<p>设 <span class="arithmatex">\(f(x)=x^2\)</span>，则 <span class="arithmatex">\(\nabla f=2x\)</span>。从 <span class="arithmatex">\(x_0=4\)</span>、<span class="arithmatex">\(\eta=0.1\)</span> 出发：<span class="arithmatex">\(x_1=4-0.1\cdot8=3.2\)</span>；<span class="arithmatex">\(x_2=3.2-0.1\cdot6.4=2.56\)</span>……稳步逼近最低点 <span class="arithmatex">\(0\)</span>。</p>
+<p class="admonition-title">例 1：手推一步梯度下降</p>
+<p>设 <span class="arithmatex">\(f(x)=x^2\)</span>，它的梯度是 <span class="arithmatex">\(\nabla f=2x\)</span>。我们从 <span class="arithmatex">\(x_0=4\)</span> 出发，取学习率 <span class="arithmatex">\(\eta=0.1\)</span>。第一步：<span class="arithmatex">\(x_1=4-0.1\times8=3.2\)</span>；第二步：<span class="arithmatex">\(x_2=3.2-0.1\times6.4=2.56\)</span>……你会看到它稳稳地、一步步逼近最低点 <span class="arithmatex">\(0\)</span>。</p>
 </div>
-<h2 id="_3">三、代码实现<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h2 id="_4">动手：实现梯度下降，并让学习率"作妖"<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>我们把上面的更新公式写成一个通用函数。它接收"如何算梯度"、起点、学习率和步数，然后老老实实地一步步更新：</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">gradient_descent</span><span class="p">(</span><span class="n">grad</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span> <span class="n">steps</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
     <span class="n">traj</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">steps</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">grad</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>      <span class="c1"># θ ← θ - η ∇f</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">grad</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>      <span class="c1"># 这就是 θ ← θ - η ∇f</span>
         <span class="n">traj</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">traj</span><span class="p">)</span>
 
 <span class="n">grad</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>            <span class="c1"># f(x) = x^2 的梯度</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">gradient_descent</span><span class="p">(</span><span class="n">grad</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>   <span class="c1"># 稳定收敛到 0</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">gradient_descent</span><span class="p">(</span><span class="n">grad</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>   <span class="c1"># lr 过大 → 来回放大、发散</span>
 </code></pre></div>
-<p>运行第二行会看到数值越跳越大——这就是学习率过大导致的发散。</p>
-<h2 id="_4">四、常见陷阱与调试<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>先用一个合适的学习率跑跑看，它应该稳稳收敛到 0：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">gradient_descent</span><span class="p">(</span><span class="n">grad</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+<span class="c1"># [4. 3.2 2.56 2.048 1.6384 1.31072]，正一步步逼近 0</span>
+</code></pre></div>
+<p>现在我们故意把学习率调得过大，看会发生什么：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">gradient_descent</span><span class="p">(</span><span class="n">grad</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+<span class="c1"># [4. -4.8 5.76 -6.912 8.2944 -9.95328]，数值越跳越大、彻底发散</span>
+</code></pre></div>
+<p>注意第二组结果：它在正负之间来回横跳，而且幅度越来越大。这就是"学习率过大导致发散"的真实样子。把这两段亲手跑一遍，你对学习率的体会会比看任何文字都深。</p>
+<h2 id="_5">容易踩的坑<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>学习率最关键</strong>：发散先把 <span class="arithmatex">\(\eta\)</span> 调小（÷10）；收敛太慢再调大。这是调参第一反应。</li>
-<li><strong>非凸≠没法练</strong>：神经网络损失是非凸的，但实践中梯度下降配合好初始化/优化器依然好用——别因为"非凸"就放弃 GD。</li>
-<li><strong>特征未标准化</strong>：各维尺度差异大时损失面"又长又窄"，GD 会来回横跳——先做标准化（见 <a href="../1-4-3-pandas-data/">1.4.3 Pandas 与数据处理</a>）。</li>
-<li><strong>局部最优 vs 鞍点</strong>：高维里更常见的障碍其实是鞍点，不是局部最优。</li>
+<li><strong>学习率是第一调参对象</strong>：模型一发散，先别怀疑别的，第一反应是把学习率调小（比如除以 10）；如果收敛太慢，再适当调大。</li>
+<li><strong>非凸不等于练不了</strong>：神经网络的损失确实是非凸的，但实践证明，配上好的初始化和优化器，梯度下降照样能找到足够好的解。别因为"非凸"两个字就放弃。</li>
+<li><strong>特征没标准化会害你</strong>：当各个特征的数值范围差很多时，损失面会变成"又长又窄"的山谷，梯度下降在里面来回横跳、收敛极慢。所以建模前往往要先做标准化（见 <a href="../1-4-3-pandas-data/">1.4.3 Pandas 与数据处理</a>）。</li>
+<li><strong>真正的障碍常是鞍点</strong>：在高维空间里，比"局部最低"更常见的卡点其实是鞍点（一个方向是低谷、另一个方向是山脊）。</li>
 </ul>
-<h2 id="_5">五、应用场景<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<h2 id="_6">它在后面会怎么用到<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>所有训练</strong>：从线性回归到 Transformer，更新公式都是 <span class="arithmatex">\(\theta\leftarrow\theta-\eta\nabla f\)</span>（见 <a href="../../ch2-round1/2-2-5-optimization-regularization/">2.2.5 优化与正则化</a>）。</li>
-<li><strong>凸模型</strong>：线性回归、逻辑回归、SVM 的损失是凸的，保证能到全局最优（见 <a href="../../ch2-round1/2-1-2-linear-regression/">2.1.2 线性回归</a>）。</li>
+<li><strong>所有训练都靠它</strong>：从线性回归到 Transformer，参数更新用的都是 <span class="arithmatex">\(\theta\leftarrow\theta-\eta\nabla f\)</span>（见 <a href="../../ch2-round1/2-2-5-optimization-regularization/">2.2.5 优化与正则化</a>）。</li>
+<li><strong>凸模型有保证</strong>：线性回归、逻辑回归、SVM 的损失都是凸的，所以梯度下降一定能走到全局最优（见 <a href="../../ch2-round1/2-1-2-linear-regression/">2.1.2 线性回归</a>）。</li>
 </ul>
-<h2 id="_6">六、练习题<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<h2 id="_7">练习<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
 <details class="note">
 <summary>基础练习</summary>
 <ol>
-<li>对 <span class="arithmatex">\(f(x)=x^2\)</span>，用 <span class="arithmatex">\(\eta=0.5\)</span> 从 <span class="arithmatex">\(x_0=4\)</span> 手算 3 步，观察是否更快收敛。</li>
-<li>改 <code>gradient_descent</code> 记录每步的 <span class="arithmatex">\(f(x)\)</span>，验证它单调下降（当 <span class="arithmatex">\(\eta\)</span> 合适时）。</li>
+<li>对 <span class="arithmatex">\(f(x)=x^2\)</span>，把学习率改成 <span class="arithmatex">\(\eta=0.5\)</span>，从 <span class="arithmatex">\(x_0=4\)</span> 手算 3 步，看它是不是收敛得更快了。</li>
+<li>改一下 <code>gradient_descent</code>，让它每一步都记录并打印 <span class="arithmatex">\(f(x)\)</span> 的值，验证当学习率合适时，损失是单调下降的。</li>
 </ol>
 </details>
 <details class="note">
 <summary>进阶练习</summary>
 <ol>
-<li>把 <span class="arithmatex">\(f\)</span> 换成二维 <span class="arithmatex">\(f(x,y)=x^2+10y^2\)</span>（病态），观察 GD 在 <span class="arithmatex">\(y\)</span> 方向震荡；再对坐标做缩放后重试。</li>
-<li>实现带动量的梯度下降 <span class="arithmatex">\(v\leftarrow\beta v+\nabla f,\ \theta\leftarrow\theta-\eta v\)</span>，对比收敛速度。</li>
+<li>把函数换成二维的 <span class="arithmatex">\(f(x,y)=x^2+10y^2\)</span>（这是个"病态"的窄山谷），观察梯度下降在 <span class="arithmatex">\(y\)</span> 方向疯狂横跳；再把坐标缩放一下重试，体会标准化的作用。</li>
+<li>实现带动量的梯度下降：<span class="arithmatex">\(v\leftarrow\beta v+\nabla f\)</span>，<span class="arithmatex">\(\theta\leftarrow\theta-\eta v\)</span>。和普通版本比一比，看收敛快了多少。</li>
 </ol>
 </details>
-<h2 id="_7">七、小结与延伸阅读<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<h2 id="_8">小结<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>凸 = 碗形</strong>，局部最优即全局最优；非凸有多个坑。</li>
-<li>训练的统一更新式：<span class="arithmatex">\(\theta\leftarrow\theta-\eta\nabla f\)</span>，<strong>学习率 <span class="arithmatex">\(\eta\)</span></strong> 是第一调参旋钮。</li>
-<li>发散先调小学习率，横跳先做特征标准化。</li>
+<li><strong>凸函数像个碗</strong>，局部最低就是全局最低；非凸函数则有很多坑。</li>
+<li>训练的统一更新公式是 <span class="arithmatex">\(\theta\leftarrow\theta-\eta\nabla f\)</span>，其中<strong>学习率 <span class="arithmatex">\(\eta\)</span> 是头号旋钮</strong>。</li>
+<li>发散先调小学习率，横跳先做特征标准化——这两条经验能帮你省下大量调试时间。</li>
 </ul>
-<p>延伸：<a href="https://mml-book.github.io/"><em>Mathematics for Machine Learning</em></a> 第 7 章；Boyd《Convex Optimization》（进阶）。</p>
+<p>想深入凸优化，可参考 <a href="https://mml-book.github.io/"><em>Mathematics for Machine Learning</em></a> 第 7 章；更进阶的可读 Boyd 的《Convex Optimization》。</p>
 
 
 

@@ -709,10 +709,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么线性代数是 AI 的语言
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一、直觉：它解决什么问题
+        先把语言统一：向量与矩阵
       
     </span>
   </a>
@@ -723,7 +734,18 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、原理与数学推导
+        矩阵乘法：最该吃透的一个运算
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#svd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        转置、逆、特征值、SVD：各是什么、有什么用
       
     </span>
   </a>
@@ -734,7 +756,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、代码实现
+        动手算一算
       
     </span>
   </a>
@@ -745,7 +767,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、常见陷阱与调试
+        容易踩的坑
       
     </span>
   </a>
@@ -756,7 +778,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、应用场景
+        它在后面会怎么用到
       
     </span>
   </a>
@@ -767,7 +789,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        六、练习题
+        练习
       
     </span>
   </a>
@@ -778,7 +800,7 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        七、小结与延伸阅读
+        小结
       
     </span>
   </a>
@@ -4085,10 +4107,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么线性代数是 AI 的语言
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一、直觉：它解决什么问题
+        先把语言统一：向量与矩阵
       
     </span>
   </a>
@@ -4099,7 +4132,18 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        二、原理与数学推导
+        矩阵乘法：最该吃透的一个运算
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#svd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        转置、逆、特征值、SVD：各是什么、有什么用
       
     </span>
   </a>
@@ -4110,7 +4154,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三、代码实现
+        动手算一算
       
     </span>
   </a>
@@ -4121,7 +4165,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四、常见陷阱与调试
+        容易踩的坑
       
     </span>
   </a>
@@ -4132,7 +4176,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        五、应用场景
+        它在后面会怎么用到
       
     </span>
   </a>
@@ -4143,7 +4187,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        六、练习题
+        练习
       
     </span>
   </a>
@@ -4154,7 +4198,7 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        七、小结与延伸阅读
+        小结
       
     </span>
   </a>
@@ -4251,104 +4295,118 @@
 <blockquote>
 <p><strong>难度</strong> ⭐⭐☆☆☆ · <strong>前置</strong>：高中向量与矩阵基础</p>
 </blockquote>
-<p>线性代数是机器学习的"母语"：一张数据表就是一个矩阵，一次神经网络前向传播就是几次矩阵乘法。把它学扎实，后面的 PCA、线性回归、神经网络都会变得透明。</p>
 <div class="admonition abstract">
-<p class="admonition-title">学习目标</p>
+<p class="admonition-title">读完这一节，你会</p>
 <ul>
-<li>能用"向量=数据点、矩阵=线性变换"的视角理解数据与模型</li>
-<li>会手算矩阵乘法、转置、逆，理解特征值/特征向量与 SVD 的含义</li>
-<li>能用 NumPy 完成上述运算，并说出它们在 ML 里对应什么</li>
+<li>学会用"向量是数据、矩阵是变换"的眼光看待数据和模型</li>
+<li>真正理解矩阵乘法在做什么，并会手算转置、逆、特征值</li>
+<li>知道这些运算在 NumPy 里怎么写，以及它们各自对应 AI 里的什么</li>
 </ul>
 </div>
-<h2 id="_1">一、直觉：它解决什么问题<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>一条数据（比如一朵花的"花瓣长、花瓣宽、花萼长、花萼宽"）就是一个<strong>向量</strong> <span class="arithmatex">\(\mathbf{x}\in\mathbb{R}^4\)</span>；<span class="arithmatex">\(N\)</span> 条数据堆起来就是一个 <span class="arithmatex">\(N\times 4\)</span> 的<strong>矩阵</strong> <span class="arithmatex">\(X\)</span>。而"模型"做的事，本质就是对向量做<strong>线性变换</strong>——乘一个矩阵 <span class="arithmatex">\(W\)</span>。</p>
+<h2 id="ai">为什么线性代数是 AI 的语言<a class="headerlink" href="#ai" title="Permanent link">¶</a></h2>
+<p>很多人一听"线性代数"就头大，但其实它是整个 AI 领域里最值钱的数学工具，没有之一。原因很简单：<strong>机器学习里的数据和模型，几乎都是用向量和矩阵来表示的。</strong></p>
+<p>想象你在描述一朵花，记下了它的花瓣长、花瓣宽、花萼长、花萼宽四个数字。把这四个数排成一列，就得到一个<strong>向量</strong>——它代表了一个数据样本。如果你有一千朵花，就是一千个这样的向量，把它们摞起来，就成了一个一千行、四列的<strong>矩阵</strong>。</p>
+<p>那模型又是什么呢？神经网络的每一层，做的事情本质上就是"拿一个矩阵去乘这个数据向量"。换句话说，<strong>模型在不停地对数据做线性变换</strong>。下面这张图就画出了这件事：</p>
 <div class="diagram">
 <svg viewBox="0 0 360 190" font-family="-apple-system, 'Segoe UI', sans-serif">
   <defs>
     <marker id="va" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="var(--dia-accent)"></path></marker>
     <marker id="vb" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="var(--dia-blue)"></path></marker>
   </defs>
-  <!-- axes -->
   <line x1="40" y1="165" x2="330" y2="165" stroke="var(--dia-stroke-tertiary)" stroke-width="1"></line>
   <line x1="40" y1="165" x2="40" y2="20" stroke="var(--dia-stroke-tertiary)" stroke-width="1"></line>
-  <!-- original vector v -->
   <line x1="40" y1="165" x2="130" y2="105" stroke="var(--dia-accent)" stroke-width="2" marker-end="url(#va)"></line>
   <text x="135" y="100" font-size="13" fill="var(--dia-accent)">v</text>
-  <!-- transformed Av -->
   <line x1="40" y1="165" x2="245" y2="60" stroke="var(--dia-blue)" stroke-width="2" marker-end="url(#vb)"></line>
   <text x="250" y="56" font-size="13" fill="var(--dia-blue)">Av</text>
 </svg>
 </div>
-<p class="figure-caption">图：矩阵 A 把向量 v 线性变换为 Av（旋转 + 缩放）。神经网络的每一层都在做这件事。</p>
+<p class="figure-caption">矩阵 A 把向量 v 变成了 Av——旋转加缩放。神经网络的每一层都在重复做这件事。</p>
 
-<h2 id="_2">二、原理与数学推导<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p><strong>向量与矩阵</strong>：<span class="arithmatex">\(\mathbf{x}\in\mathbb{R}^n\)</span> 是 <span class="arithmatex">\(n\)</span> 个数；<span class="arithmatex">\(A\in\mathbb{R}^{m\times n}\)</span> 是 <span class="arithmatex">\(m\)</span> 行 <span class="arithmatex">\(n\)</span> 列。</p>
-<p><strong>矩阵乘法</strong>（最核心）：<span class="arithmatex">\(C=AB\)</span> 中</p>
-<div class="arithmatex">\[C_{ij}=\sum_{k} A_{ik}B_{kj}\]</div>
-<p>要求 <span class="arithmatex">\(A\)</span> 的列数 = <span class="arithmatex">\(B\)</span> 的行数。一个直观理解：<span class="arithmatex">\(A\mathbf{x}\)</span> 是用 <span class="arithmatex">\(\mathbf{x}\)</span> 的分量对 <span class="arithmatex">\(A\)</span> 的各列做加权求和。</p>
-<p><strong>转置</strong> <span class="arithmatex">\(A^\top\)</span>：行列互换，<span class="arithmatex">\((A^\top)_{ij}=A_{ji}\)</span>。<strong>逆</strong> <span class="arithmatex">\(A^{-1}\)</span> 满足 <span class="arithmatex">\(A^{-1}A=I\)</span>（仅方阵且可逆时存在）。</p>
-<p><strong>特征值与特征向量</strong>：若 <span class="arithmatex">\(A\mathbf{v}=\lambda\mathbf{v}\)</span>，则 <span class="arithmatex">\(\mathbf{v}\)</span> 是特征向量、<span class="arithmatex">\(\lambda\)</span> 是特征值——表示"这个方向只被缩放、不被旋转"。</p>
-<p><strong>奇异值分解 SVD</strong>：任意矩阵都能拆成 <span class="arithmatex">\(A=U\Sigma V^\top\)</span>，其中 <span class="arithmatex">\(\Sigma\)</span> 的对角元（奇异值）刻画"每个方向上拉伸了多少"。PCA 正是它的应用。</p>
+<p>把这个画面记在心里，后面学线性回归、PCA、神经网络时，你会发现它们都不过是这张图的变体。</p>
+<h2 id="_1">先把语言统一：向量与矩阵<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>我们先把几个最基本的对象定义清楚，再逐一解释。</p>
+<p><strong>向量</strong>就是一列数，记作 <span class="arithmatex">\(\mathbf{x}\in\mathbb{R}^n\)</span>，意思是它由 <span class="arithmatex">\(n\)</span> 个实数组成。<strong>矩阵</strong>是一个数表，记作 <span class="arithmatex">\(A\in\mathbb{R}^{m\times n}\)</span>，表示它有 <span class="arithmatex">\(m\)</span> 行、<span class="arithmatex">\(n\)</span> 列。</p>
+<p>为了更直观，你可以这样对应：一个向量就是一条数据（一朵花的四个测量值），一个矩阵就是一整张数据表（很多朵花排在一起），或者是模型里的一组参数。它们不是抽象符号，而是你天天打交道的"数据"和"模型"本身。</p>
+<h2 id="_2">矩阵乘法：最该吃透的一个运算<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>如果说整节只能记住一个运算，那一定是矩阵乘法。</p>
+<p><strong>定义</strong>：两个矩阵相乘 <span class="arithmatex">\(C = AB\)</span>，结果里第 <span class="arithmatex">\(i\)</span> 行第 <span class="arithmatex">\(j\)</span> 列的元素是</p>
+<div class="arithmatex">\[C_{ij}=\sum_{k} A_{ik}B_{kj}.\]</div>
+<p>它要求 <span class="arithmatex">\(A\)</span> 的列数等于 <span class="arithmatex">\(B\)</span> 的行数，否则没法相乘。</p>
+<p>光看公式有点干，我们换个更有画面感的理解：<strong><span class="arithmatex">\(A\mathbf{x}\)</span> 其实是在用向量 <span class="arithmatex">\(\mathbf{x}\)</span> 的每个分量，对矩阵 <span class="arithmatex">\(A\)</span> 的各列做加权求和。</strong> 你给每一列分配一个权重，再把它们加起来，就得到了结果。神经网络里"输入乘权重"算的就是这个。</p>
 <div class="admonition example">
-<p class="admonition-title">例 1：矩阵 × 向量</p>
-<p>设 <span class="arithmatex">\(A=\begin{bmatrix}1&amp;2\\3&amp;4\end{bmatrix},\ \mathbf{x}=\begin{bmatrix}1\\1\end{bmatrix}\)</span>，则
-$<span class="arithmatex">\(A\mathbf{x}=\begin{bmatrix}1\cdot1+2\cdot1\\3\cdot1+4\cdot1\end{bmatrix}=\begin{bmatrix}3\\7\end{bmatrix}.\)</span>$</p>
+<p class="admonition-title">例 1：算一个矩阵乘向量</p>
+<p>设 <span class="arithmatex">\(A=\begin{bmatrix}1&amp;2\\3&amp;4\end{bmatrix}\)</span>，<span class="arithmatex">\(\mathbf{x}=\begin{bmatrix}1\\1\end{bmatrix}\)</span>。按定义，结果的第一个数是第一行点乘 <span class="arithmatex">\(\mathbf{x}\)</span>，第二个数是第二行点乘 <span class="arithmatex">\(\mathbf{x}\)</span>：
+$<span class="arithmatex">\(A\mathbf{x}=\begin{bmatrix}1\cdot1+2\cdot1\\3\cdot1+4\cdot1\end{bmatrix}=\begin{bmatrix}3\\7\end{bmatrix}.\)</span>$
+动手算一遍，比看十遍公式都管用。</p>
 </div>
-<h2 id="_3">三、代码实现<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h2 id="svd">转置、逆、特征值、SVD：各是什么、有什么用<a class="headerlink" href="#svd" title="Permanent link">¶</a></h2>
+<p>除了乘法，还有四个名词你会反复遇到。我们先给出简洁定义，再说它们好在哪。</p>
+<p><strong>转置</strong> <span class="arithmatex">\(A^\top\)</span>：把矩阵的行和列互换，即 <span class="arithmatex">\((A^\top)_{ij}=A_{ji}\)</span>。它常用来调整数据的摆放方向，好让两个矩阵能对得上、乘得起来。</p>
+<p><strong>逆</strong> <span class="arithmatex">\(A^{-1}\)</span>：满足 <span class="arithmatex">\(A^{-1}A=I\)</span> 的那个矩阵（只有方阵且"不退化"时才存在）。你可以把它理解成"撤销操作"——如果 <span class="arithmatex">\(A\)</span> 把向量做了某种变换，<span class="arithmatex">\(A^{-1}\)</span> 就把它变回去。线性回归的解析解里就会用到它。</p>
+<p><strong>特征值与特征向量</strong>：如果一个向量被矩阵作用后，方向不变、只是被拉长或压短了，即满足 <span class="arithmatex">\(A\mathbf{v}=\lambda\mathbf{v}\)</span>，那么 <span class="arithmatex">\(\mathbf{v}\)</span> 就叫<strong>特征向量</strong>，对应的伸缩倍数 <span class="arithmatex">\(\lambda\)</span> 叫<strong>特征值</strong>。它回答的问题是："这个变换里，哪些方向是'稳定'的？"</p>
+<p><strong>奇异值分解（SVD）</strong>：任何一个矩阵都能被拆成 <span class="arithmatex">\(A=U\Sigma V^\top\)</span> 三部分，其中 <span class="arithmatex">\(\Sigma\)</span> 对角线上的数（奇异值）告诉你"在每个方向上数据被拉伸了多少"。后面学 PCA 降维，靠的就是它。</p>
+<p>这四个概念现在不用全背下来，知道"它们各自回答什么问题"就够了，等用到时再回来查。</p>
+<h2 id="_3">动手算一算<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>光说不练假把式。NumPy 把上面这些运算都封装好了，我们一步步来。</p>
+<p>先做最常用的矩阵乘向量。注意：在 NumPy 里，<strong>矩阵乘法要用 <code>@</code>，而不是 <code>*</code></strong>——后者是逐个元素相乘，完全是另一回事：</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span>
               <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">]])</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])</span>
 
-<span class="c1"># 矩阵 × 向量：用 @（推荐），不要用 *（那是逐元素乘）</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span>            <span class="c1"># [3. 7.]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>             <span class="c1"># 转置</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>  <span class="c1"># 逆</span>
-
-<span class="c1"># 特征值/特征向量</span>
-<span class="n">vals</span><span class="p">,</span> <span class="n">vecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>            <span class="c1"># 两个特征值</span>
-
-<span class="c1"># SVD：U, 奇异值 s, V^T</span>
-<span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>               <span class="c1"># 奇异值（降序）</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span>     <span class="c1"># [3. 7.]，和我们手算的一模一样</span>
 </code></pre></div>
-<h2 id="_4">四、常见陷阱与调试<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>输出正是例 1 里算出的 <code>[3, 7]</code>，说明我们对了。</p>
+<p>接着看转置和逆，它们各自一个函数就能搞定：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>               <span class="c1"># 转置：行列互换</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>  <span class="c1"># 逆矩阵</span>
+</code></pre></div>
+<p>最后是特征值和 SVD。它们看着高深，其实也是一行调用的事：</p>
+<div class="highlight"><pre><span></span><code><span class="n">vals</span><span class="p">,</span> <span class="n">vecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>   <span class="c1"># 特征值与特征向量</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>     <span class="c1"># SVD：s 就是奇异值（已按从大到小排好）</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+<p>你不需要现在就理解输出的每个数字，重要的是知道：<strong>这些"听起来很难"的运算，在代码里往往只是一行</strong>。难的从来不是调用，而是理解它们在解决什么问题——而那，正是这一节真正想教给你的。</p>
+<h2 id="_4">容易踩的坑<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong><code>@</code> vs <code>*</code></strong>：<code>A @ x</code> 是矩阵乘法；<code>A * x</code> 是逐元素乘（且会触发广播），二者结果完全不同。</li>
-<li><strong>形状不匹配</strong>：<code>(m,n) @ (n,)</code> 合法，<code>(m,n) @ (m,)</code> 报 <code>shapes not aligned</code>——先 <code>print(A.shape, x.shape)</code> 检查。</li>
-<li><strong>逆不要随便求</strong>：解 <span class="arithmatex">\(A\mathbf{x}=\mathbf{b}\)</span> 用 <code>np.linalg.solve(A, b)</code> 比 <code>inv(A) @ b</code> 更稳更快。</li>
-<li><strong>整数数组</strong>：<code>np.array([[1,2]])</code> 是 int，做除法会被截断；显式写成浮点 <code>1.</code>。</li>
+<li><strong><code>@</code> 和 <code>*</code> 搞混</strong>：<code>A @ x</code> 是矩阵乘法，<code>A * x</code> 是逐元素乘（还会触发广播），两者结果天差地别。这是新手最常见的 bug 来源。</li>
+<li><strong>形状对不上</strong>：<code>(m, n) @ (n,)</code> 合法，但 <code>(m, n) @ (m,)</code> 会报 <code>shapes not aligned</code>。报错时第一反应是 <code>print(A.shape, x.shape)</code> 看看维度。</li>
+<li><strong>能不求逆就不求逆</strong>：要解方程 <span class="arithmatex">\(A\mathbf{x}=\mathbf{b}\)</span>，请用 <code>np.linalg.solve(A, b)</code>，它比先求逆再相乘又快又稳。</li>
+<li><strong>整数数组的除法</strong>：<code>np.array([[1, 2]])</code> 是整数类型，做除法时可能被悄悄截断。需要小数就显式写成 <code>1.</code>。</li>
 </ul>
-<h2 id="_5">五、应用场景<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<h2 id="_5">它在后面会怎么用到<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<p>这一节不是为了学数学而学数学，它马上就会派上用场：</p>
 <ul>
-<li><strong>线性回归</strong>：正规方程 <span class="arithmatex">\(\hat{\mathbf{w}}=(X^\top X)^{-1}X^\top\mathbf{y}\)</span> 全是矩阵运算（见 <a href="../../ch2-round1/2-1-2-linear-regression/">2.1.2 线性回归</a>）。</li>
-<li><strong>神经网络</strong>：每一层就是 <span class="arithmatex">\(\mathbf{y}=W\mathbf{x}+\mathbf{b}\)</span>（见 <a href="../../ch2-round1/2-2-1-perceptron-mlp/">2.2.1 感知机与 MLP</a>）。</li>
-<li><strong>PCA</strong>：对协方差矩阵做特征分解 / 对数据做 SVD 来降维（见 <a href="../../ch2-round1/2-1-8-unsupervised/">2.1.8 无监督学习</a>）。</li>
+<li><strong>线性回归</strong>的解析解 <span class="arithmatex">\(\hat{\mathbf{w}}=(X^\top X)^{-1}X^\top\mathbf{y}\)</span>，整个就是一串矩阵运算（见 <a href="../../ch2-round1/2-1-2-linear-regression/">2.1.2 线性回归</a>）。</li>
+<li><strong>神经网络</strong>的每一层都是 <span class="arithmatex">\(\mathbf{y}=W\mathbf{x}+\mathbf{b}\)</span>，核心还是矩阵乘向量（见 <a href="../../ch2-round1/2-2-1-perceptron-mlp/">2.2.1 感知机与 MLP</a>）。</li>
+<li><strong>PCA 降维</strong>靠的就是对数据做特征分解或 SVD（见 <a href="../../ch2-round1/2-1-8-unsupervised/">2.1.8 无监督学习</a>）。</li>
 </ul>
-<h2 id="_6">六、练习题<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<h2 id="_6">练习<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <details class="note">
 <summary>基础练习</summary>
 <ol>
-<li>手算 <span class="arithmatex">\(\begin{bmatrix}2&amp;0\\0&amp;3\end{bmatrix}\begin{bmatrix}1\\1\end{bmatrix}\)</span>，并说明它对向量做了什么几何操作。</li>
-<li>用 NumPy 验证 <span class="arithmatex">\((AB)^\top=B^\top A^\top\)</span>（随机生成 <span class="arithmatex">\(A,B\)</span>）。</li>
+<li>手算 <span class="arithmatex">\(\begin{bmatrix}2&amp;0\\0&amp;3\end{bmatrix}\begin{bmatrix}1\\1\end{bmatrix}\)</span>，并想一想：这个矩阵对向量做了什么几何操作？（提示：两个方向各被拉伸了不同倍数。）</li>
+<li>随机生成两个矩阵 <span class="arithmatex">\(A\)</span>、<span class="arithmatex">\(B\)</span>，用 NumPy 验证 <span class="arithmatex">\((AB)^\top = B^\top A^\top\)</span> 这条常用性质。</li>
 </ol>
 </details>
 <details class="note">
 <summary>进阶练习</summary>
 <ol>
-<li>自己写一个不用 <code>@</code> 的 <code>matmul(A, B)</code>（三重循环），再与 <code>A @ B</code> 对比结果与耗时。</li>
-<li>对一张 <span class="arithmatex">\(50\times 50\)</span> 的灰度图做 SVD，只保留前 <span class="arithmatex">\(k\)</span> 个奇异值重建，观察 <span class="arithmatex">\(k=5,20\)</span> 时的清晰度——这就是"低秩压缩"。</li>
+<li>自己写一个不调用 <code>@</code> 的 <code>matmul(A, B)</code>（三重循环实现），再和 <code>A @ B</code> 对比结果是否一致、耗时差多少。你会亲身感受到向量化的威力。</li>
+<li>找一张 <span class="arithmatex">\(50\times50\)</span> 的灰度图，对它做 SVD，只保留前 <span class="arithmatex">\(k\)</span> 个最大的奇异值来重建图像，看看 <span class="arithmatex">\(k=5\)</span> 和 <span class="arithmatex">\(k=20\)</span> 时清晰度差多少。这就是"低秩压缩"，也是 PCA 的雏形。</li>
 </ol>
 </details>
-<h2 id="_7">七、小结与延伸阅读<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<h2 id="_7">小结<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
 <ul>
-<li>数据是向量、模型是矩阵变换；<strong>矩阵乘法</strong>是一切的核心运算。</li>
-<li>特征值/SVD 描述"哪个方向被拉伸多少"，是 PCA 的数学基础。</li>
-<li>用 <code>@</code> 做矩阵乘、用 <code>solve</code> 解方程，别滥用求逆。</li>
+<li><strong>数据是向量，模型是矩阵变换</strong>——记住这句话，半本深度学习都会变得直观。</li>
+<li><strong>矩阵乘法是一切运算的核心</strong>，<span class="arithmatex">\(A\mathbf{x}\)</span> 就是对 <span class="arithmatex">\(A\)</span> 的列做加权求和。</li>
+<li>转置、逆、特征值、SVD 各回答一个问题；用到时查表即可，不必死记。</li>
+<li>代码里，用 <code>@</code> 做乘法、用 <code>solve</code> 解方程，别滥用求逆。</li>
 </ul>
-<p>延伸：<a href="https://mml-book.github.io/"><em>Mathematics for Machine Learning</em></a> 第 2–4 章；3Blue1Brown《线性代数的本质》系列。</p>
+<p>想把几何直觉建得更牢，强烈推荐看 3Blue1Brown 的《线性代数的本质》系列——它用动画把"矩阵在做什么"讲得无比清楚。更系统的推导可参考 <a href="https://mml-book.github.io/"><em>Mathematics for Machine Learning</em></a> 的第 2–4 章。</p>
 
 
 
