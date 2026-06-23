@@ -1,119 +1,66 @@
 /* ============================================================
-   High School AI Notes — soma-zero skin over MkDocs Material
-   参照 /soma-zero-tutorial 的 e-Manual 风格：深色顶栏 + 绿色品牌
-   + 左侧章节树 + 右侧"本页导航"浮卡 + 图片灯箱。
+   High School AI Notes — 主题参照姐妹站 USACO（high-school-cs-notes）
+   Material 默认布局 + 二级标题渐变色带；主色改为暖色（陶土橙 terracotta），
+   与 USACO 配图系统的强调色 #c4673a 保持一致。
    ============================================================ */
 
-/* ---------- soma-zero 设计令牌 ---------- */
-:root {
-  --soma-accent: #2e9e5b;
-  --soma-accent-dark: #1f7d45;
-  --soma-header-bg: #111418;
-  --soma-sidebar-bg: #f6f7f8;
-  --soma-border: #e3e6e8;
-  --soma-text: #24292f;
-  --soma-muted: #6b7280;
-  --soma-link: #2563eb;
-  --soma-warn: #d4351c;
-}
-
-/* 自定义主色（mkdocs.yml: palette primary/accent = custom） */
+/* ---------- 暖色主色（mkdocs.yml: palette primary/accent = custom） ---------- */
 [data-md-color-primary="custom"] {
-  --md-primary-fg-color: var(--soma-accent);
-  --md-primary-fg-color--light: #4bb878;
-  --md-primary-fg-color--dark: var(--soma-accent-dark);
-  --md-primary-bg-color: #ffffff;
+  --md-primary-fg-color:        #b55d32;   /* 陶土橙（深，顶栏底色，白字可读） */
+  --md-primary-fg-color--light: #c4673a;
+  --md-primary-fg-color--dark:  #9c4e2a;
+  --md-primary-bg-color:        #ffffff;
   --md-primary-bg-color--light: #ffffffb3;
 }
 [data-md-color-accent="custom"] {
-  --md-accent-fg-color: var(--soma-accent-dark);
+  --md-accent-fg-color: #c4673a;
 }
 
-/* 正文链接用 soma 蓝 */
-.md-typeset a { color: var(--soma-link); }
-.md-typeset a:hover { text-decoration: underline; }
+/* 正文链接随暖色 */
+.md-typeset a { color: #b55d32; }
+.md-typeset a:hover { color: #c4673a; text-decoration: underline; }
 
-/* ---------- 顶栏：深色 + 绿色品牌 ---------- */
-.md-header {
-  background-color: var(--soma-header-bg);
-  color: #fff;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+/* ---------- 正文二级标题：暖色渐变色带（USACO 同款，换暖色） ---------- */
+.md-content h2 {
+  background: linear-gradient(135deg, #b55d32 0%, #da7756 100%);
+  color: #fff !important;
+  padding: 10px 16px;
+  border-radius: 4px;
+  margin-top: 2.4em;
+  font-size: 1.15em;
+  letter-spacing: 0.02em;
 }
-.md-header__title { font-weight: 800; letter-spacing: 0.3px; }
-.md-tabs { background-color: var(--soma-header-bg); }
-.md-tabs__link { opacity: 0.85; font-weight: 600; }
-.md-tabs__link:hover,
-.md-tabs__link--active { opacity: 1; }
+.md-content h2 a,
+.md-content h2 code { color: #fff !important; }
+.md-content h2 .headerlink { color: rgba(255, 255, 255, 0.5); }
+.md-content h2 .headerlink:hover { color: #fff; }
 
-/* ---------- 左侧栏：浅灰 + 章节树 active 绿条 ---------- */
-.md-sidebar--primary { background-color: var(--soma-sidebar-bg); }
-@media screen and (min-width: 76.25em) {
-  .md-sidebar--primary { width: 12.5rem; }
-}
-.md-nav__item .md-nav__link--active,
-.md-nav__link--active > .md-nav__link {
-  color: var(--soma-accent-dark);
-  font-weight: 700;
-}
-.md-nav__link--active {
-  border-left: 3px solid var(--soma-accent);
-  background: #e7f4ec;
-  padding-left: 0.5rem;
-  border-radius: 0 4px 4px 0;
+/* 三级标题用暖色下划线点缀 */
+.md-content h3 {
+  border-bottom: 2px solid #f0d9cb;
+  padding-bottom: 0.2em;
 }
 
-/* ---------- 右侧"本页导航"：改为浮动卡片 ---------- */
-@media screen and (min-width: 76.25em) {
-  .md-sidebar--secondary {
-    border: 1px solid var(--soma-border);
-    border-radius: 10px;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
-    background: #fff;
-    padding: 0.6rem 0.7rem;
-    margin-top: 1.2rem;
-  }
-  .md-sidebar--secondary .md-nav__title {
-    font-size: 0.72rem;
-    color: var(--soma-muted);
-    border-bottom: 1px solid var(--soma-border);
-    padding-bottom: 0.4rem;
-    margin-bottom: 0.3rem;
-  }
+/* ---------- 代码块限高滚动（USACO 同款） ---------- */
+.md-typeset pre > code {
+  display: block;
+  max-height: 30em;
+  overflow: auto;
 }
 
-/* ---------- 正文排版 ---------- */
-.md-typeset { font-size: 0.82rem; line-height: 1.7; color: var(--soma-text); }
-.md-typeset h1 {
-  font-weight: 800;
-  border-bottom: 2px solid var(--soma-border);
-  padding-bottom: 0.4rem;
+/* ---------- admonition「学习目标」配暖色调 ---------- */
+.md-typeset .admonition.abstract,
+.md-typeset details.abstract {
+  border-color: #c4673a;
 }
-.md-typeset h2 {
-  font-weight: 700;
-  border-bottom: 1px solid var(--soma-border);
-  padding-bottom: 0.2rem;
+.md-typeset .abstract > .admonition-title,
+.md-typeset .abstract > summary {
+  background-color: rgba(196, 103, 58, 0.1);
 }
-.md-typeset h3 { font-weight: 700; }
-
-/* 图片：适中尺寸 + 边框 + 点击放大（glightbox） */
-.md-typeset img { max-width: 480px; border: 1px solid var(--soma-border); border-radius: 6px; }
-.md-typeset table img { max-width: 170px; border: none; }
-
-/* 表格 */
-.md-typeset table:not([class]) th { background: #f1f3f5; font-weight: 700; }
-.md-typeset table:not([class]) { font-size: 0.78rem; }
-
-/* 警告/引用：soma 红条 */
-.md-typeset blockquote {
-  border-left: 4px solid var(--soma-warn);
-  background: #fff7f6;
-  color: #5a3a36;
-  border-radius: 0 6px 6px 0;
+.md-typeset .abstract > .admonition-title::before,
+.md-typeset .abstract > summary::before {
+  background-color: #c4673a;
 }
 
-/* 行内代码 */
-.md-typeset code { background: #f1f3f5; border-radius: 4px; }
-
-/* 灯箱遮罩对齐 soma */
-.glightbox-clean .gslide-description { background: #fff; }
-.goverlay { background: rgba(0, 0, 0, 0.82) !important; }
+/* ---------- 图片灯箱遮罩（glightbox） ---------- */
+.goverlay { background: rgba(26, 22, 18, 0.86) !important; }

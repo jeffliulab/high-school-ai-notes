@@ -79,7 +79,6 @@ markdown_extensions:
 
 extra_javascript:
   - javascripts/katex.js
-  - javascripts/soma_sidebar.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
