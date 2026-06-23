@@ -1,0 +1,1039 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/appendix/a1-resources/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/appendix/a1-resources/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a1-resources/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/appendix/a2-datasets/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/appendix/a2-datasets/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a2-datasets/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/appendix/a3-cheatsheet/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/appendix/a3-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a3-cheatsheet/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/appendix/a4-tools/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/appendix/a4-tools/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a4-tools/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/appendix/a5-excluded/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/appendix/a5-excluded/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a5-excluded/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-1-competitions/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-1-competitions/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-1-competitions/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-2-syllabus-roadmap/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-2-syllabus-roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-2-syllabus-roadmap/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-3-1-linear-algebra/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-3-1-linear-algebra/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-3-1-linear-algebra/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-3-2-calculus-gradients/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-3-2-calculus-gradients/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-3-2-calculus-gradients/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-3-3-probability-statistics/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-3-3-probability-statistics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-3-3-probability-statistics/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-3-4-convex-optimization/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-3-4-convex-optimization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-3-4-convex-optimization/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-1-python/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-1-python/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-1-python/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-2-numpy-tensors/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-2-numpy-tensors/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-2-numpy-tensors/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-3-pandas-data/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-3-pandas-data/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-3-pandas-data/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-4-visualization/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-4-visualization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-4-visualization/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-5-colab-markdown/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-5-colab-markdown/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-5-colab-markdown/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-1-supervised-workflow/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-1-supervised-workflow/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-1-supervised-workflow/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-10-feature-engineering/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-10-feature-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-10-feature-engineering/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-2-linear-regression/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-2-linear-regression/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-2-linear-regression/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-3-logistic-regression/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-3-logistic-regression/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-3-logistic-regression/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-4-classification-metrics/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-4-classification-metrics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-4-classification-metrics/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-5-knn-decision-trees/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-5-knn-decision-trees/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-5-knn-decision-trees/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-6-ensembles/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-6-ensembles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-6-ensembles/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-7-svm/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-7-svm/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-7-svm/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-8-unsupervised/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-8-unsupervised/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-8-unsupervised/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-9-model-evaluation/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-9-model-evaluation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-9-model-evaluation/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-1-perceptron-mlp/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-1-perceptron-mlp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-1-perceptron-mlp/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-2-backprop/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-2-backprop/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-2-backprop/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-3-activations-losses/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-3-activations-losses/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-3-activations-losses/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-4-pytorch-basics/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-4-pytorch-basics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-4-pytorch-basics/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-5-optimization-regularization/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-5-optimization-regularization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-5-optimization-regularization/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-3-1-conv-pooling/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-3-1-conv-pooling/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-3-1-conv-pooling/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-3-2-image-classification/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-3-2-image-classification/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-3-2-image-classification/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-3-3-transfer-learning/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-3-3-transfer-learning/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-3-3-transfer-learning/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-4-1-exam-format/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-4-1-exam-format/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-4-1-exam-format/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-4-2-mock-review/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-4-2-mock-review/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-4-2-mock-review/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-1-1-gpu-training/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-1-1-gpu-training/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-1-1-gpu-training/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-1-2-embeddings/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-1-2-embeddings/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-1-2-embeddings/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-1-3-finetuning/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-1-3-finetuning/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-1-3-finetuning/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-2-1-attention/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-2-1-attention/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-2-1-attention/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-2-2-transformer/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-2-2-transformer/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-2-2-transformer/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-2-3-autoencoders/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-2-3-autoencoders/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-2-3-autoencoders/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-1-object-detection/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-1-object-detection/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-1-object-detection/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-2-segmentation/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-2-segmentation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-2-segmentation/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-3-augmentation-ssl/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-3-augmentation-ssl/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-3-augmentation-ssl/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-4-clip/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-4-clip/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-4-clip/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-5-generative/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-5-generative/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-5-generative/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-1-text-embeddings/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-1-text-embeddings/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-1-text-embeddings/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-2-language-modeling/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-2-language-modeling/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-2-language-modeling/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-3-encoder-decoder/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-3-encoder-decoder/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-3-encoder-decoder/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-4-pretrained-llms/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-4-pretrained-llms/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-4-pretrained-llms/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-5-audio/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-5-audio/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-5-audio/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-5-1-exam-format/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-5-1-exam-format/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-5-1-exam-format/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-5-2-mock/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-5-2-mock/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-5-2-mock/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-1-1-error-analysis/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-1-1-error-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-1-1-error-analysis/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-1-2-experiment-management/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-1-2-experiment-management/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-1-2-experiment-management/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-1-3-time-strategy/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-1-3-time-strategy/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-1-3-time-strategy/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-2-1-cv-problems/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-2-1-cv-problems/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-2-1-cv-problems/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-2-2-nlp-problems/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-2-2-nlp-problems/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-2-2-nlp-problems/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-2-3-signal-opt-problems/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-2-3-signal-opt-problems/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-2-3-signal-opt-problems/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-3-team-challenge/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-3-team-challenge/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-3-team-challenge/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-4-selection-tests/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-4-selection-tests/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-4-selection-tests/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-1-1-ioai-format/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-1-1-ioai-format/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-1-1-ioai-format/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-1-2-ioai-rules/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-1-2-ioai-rules/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-1-2-ioai-rules/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-1-3-ioai-past/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-1-3-ioai-past/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-1-3-ioai-past/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-2-1-iaio-format/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-2-1-iaio-format/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-2-1-iaio-format/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-2-2-iaio-prep/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-2-2-iaio-prep/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-2-2-iaio-prep/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-3-1-full-mock/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-3-1-full-mock/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-3-1-full-mock/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-3-2-frontier/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-3-2-frontier/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-3-2-frontier/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a1-resources/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a1-resources/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/appendix/a1-resources/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a2-datasets/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a2-datasets/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/appendix/a2-datasets/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a3-cheatsheet/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a3-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/appendix/a3-cheatsheet/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a4-tools/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a4-tools/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/appendix/a4-tools/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a5-excluded/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/appendix/a5-excluded/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/appendix/a5-excluded/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-1-competitions/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-1-competitions/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-1-competitions/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-2-syllabus-roadmap/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-2-syllabus-roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-2-syllabus-roadmap/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-3-1-linear-algebra/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-3-1-linear-algebra/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-3-1-linear-algebra/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-3-2-calculus-gradients/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-3-2-calculus-gradients/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-3-2-calculus-gradients/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-3-3-probability-statistics/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-3-3-probability-statistics/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-3-3-probability-statistics/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-3-4-convex-optimization/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-3-4-convex-optimization/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-3-4-convex-optimization/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-1-python/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-1-python/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-1-python/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-2-numpy-tensors/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-2-numpy-tensors/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-2-numpy-tensors/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-3-pandas-data/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-3-pandas-data/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-3-pandas-data/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-4-visualization/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-4-visualization/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-4-visualization/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-5-colab-markdown/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch1-intro/1-4-5-colab-markdown/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch1-intro/1-4-5-colab-markdown/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-1-supervised-workflow/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-1-supervised-workflow/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-1-supervised-workflow/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-10-feature-engineering/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-10-feature-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-10-feature-engineering/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-2-linear-regression/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-2-linear-regression/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-2-linear-regression/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-3-logistic-regression/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-3-logistic-regression/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-3-logistic-regression/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-4-classification-metrics/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-4-classification-metrics/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-4-classification-metrics/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-5-knn-decision-trees/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-5-knn-decision-trees/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-5-knn-decision-trees/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-6-ensembles/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-6-ensembles/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-6-ensembles/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-7-svm/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-7-svm/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-7-svm/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-8-unsupervised/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-8-unsupervised/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-8-unsupervised/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-9-model-evaluation/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-1-9-model-evaluation/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-1-9-model-evaluation/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-1-perceptron-mlp/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-1-perceptron-mlp/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-1-perceptron-mlp/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-2-backprop/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-2-backprop/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-2-backprop/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-3-activations-losses/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-3-activations-losses/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-3-activations-losses/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-4-pytorch-basics/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-4-pytorch-basics/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-4-pytorch-basics/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-5-optimization-regularization/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-2-5-optimization-regularization/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-2-5-optimization-regularization/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-3-1-conv-pooling/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-3-1-conv-pooling/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-3-1-conv-pooling/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-3-2-image-classification/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-3-2-image-classification/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-3-2-image-classification/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-3-3-transfer-learning/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-3-3-transfer-learning/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-3-3-transfer-learning/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-4-1-exam-format/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-4-1-exam-format/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-4-1-exam-format/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-4-2-mock-review/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch2-round1/2-4-2-mock-review/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch2-round1/2-4-2-mock-review/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-1-1-gpu-training/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-1-1-gpu-training/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-1-1-gpu-training/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-1-2-embeddings/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-1-2-embeddings/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-1-2-embeddings/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-1-3-finetuning/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-1-3-finetuning/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-1-3-finetuning/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-2-1-attention/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-2-1-attention/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-2-1-attention/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-2-2-transformer/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-2-2-transformer/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-2-2-transformer/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-2-3-autoencoders/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-2-3-autoencoders/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-2-3-autoencoders/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-1-object-detection/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-1-object-detection/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-1-object-detection/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-2-segmentation/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-2-segmentation/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-2-segmentation/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-3-augmentation-ssl/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-3-augmentation-ssl/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-3-augmentation-ssl/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-4-clip/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-4-clip/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-4-clip/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-5-generative/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-3-5-generative/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-3-5-generative/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-1-text-embeddings/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-1-text-embeddings/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-1-text-embeddings/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-2-language-modeling/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-2-language-modeling/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-2-language-modeling/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-3-encoder-decoder/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-3-encoder-decoder/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-3-encoder-decoder/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-4-pretrained-llms/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-4-pretrained-llms/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-4-pretrained-llms/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-5-audio/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-4-5-audio/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-4-5-audio/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-5-1-exam-format/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-5-1-exam-format/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-5-1-exam-format/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-5-2-mock/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch3-round2/3-5-2-mock/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch3-round2/3-5-2-mock/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-1-1-error-analysis/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-1-1-error-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-1-1-error-analysis/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-1-2-experiment-management/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-1-2-experiment-management/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-1-2-experiment-management/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-1-3-time-strategy/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-1-3-time-strategy/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-1-3-time-strategy/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-2-1-cv-problems/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-2-1-cv-problems/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-2-1-cv-problems/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-2-2-nlp-problems/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-2-2-nlp-problems/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-2-2-nlp-problems/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-2-3-signal-opt-problems/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-2-3-signal-opt-problems/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-2-3-signal-opt-problems/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-3-team-challenge/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-3-team-challenge/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-3-team-challenge/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-4-selection-tests/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch4-camp/4-4-selection-tests/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch4-camp/4-4-selection-tests/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-1-1-ioai-format/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-1-1-ioai-format/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-1-1-ioai-format/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-1-2-ioai-rules/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-1-2-ioai-rules/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-1-2-ioai-rules/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-1-3-ioai-past/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-1-3-ioai-past/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-1-3-ioai-past/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-2-1-iaio-format/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-2-1-iaio-format/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-2-1-iaio-format/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-2-2-iaio-prep/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-2-2-iaio-prep/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-2-2-iaio-prep/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-3-1-full-mock/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-3-1-full-mock/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-3-1-full-mock/"/>
+    </url>
+    <url>
+        <loc>https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-3-2-frontier/</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jeffliulab.github.io/high-school-ai-notes/en/ch5-champion/5-3-2-frontier/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://jeffliulab.github.io/high-school-ai-notes/ch5-champion/5-3-2-frontier/"/>
+    </url>
+</urlset>
