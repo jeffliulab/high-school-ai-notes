@@ -16,22 +16,27 @@
 问题是，你蒙着眼睛，看不见整座山长什么样，只能感觉脚下哪个方向是下坡。**梯度**就是那个"上坡最陡"的指南针；把它反过来，就是"下坡最快"的方向。朝那个方向迈一小步，损失就降一点，反复迈步，你就慢慢挪到了谷底。
 
 <div class="diagram">
-<svg viewBox="0 0 360 190" font-family="-apple-system, 'Segoe UI', sans-serif">
+<svg viewBox="0 0 360 200" font-family="-apple-system, 'Segoe UI', sans-serif">
   <defs>
     <marker id="ga" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="var(--dia-accent)"/></marker>
   </defs>
-  <path d="M30 40 Q180 250 330 40" fill="none" stroke="var(--dia-blue)" stroke-width="2"/>
-  <circle cx="70" cy="108" r="5" fill="var(--dia-accent)"/>
-  <circle cx="110" cy="138" r="5" fill="var(--dia-accent)"/>
-  <circle cx="150" cy="153" r="5" fill="var(--dia-accent)"/>
-  <circle cx="180" cy="156" r="6" fill="var(--dia-accent-deep)"/>
-  <path d="M76 112 L104 134" stroke="var(--dia-accent)" stroke-width="1.5" marker-end="url(#ga)"/>
-  <path d="M116 142 L144 150" stroke="var(--dia-accent)" stroke-width="1.5" marker-end="url(#ga)"/>
-  <text x="186" y="150" font-size="12" fill="var(--dia-stroke-soft)">谷底</text>
-  <text x="40" y="36" font-size="12" fill="var(--dia-stroke-soft)">损失</text>
+  <!-- 损失曲线（山谷），最低点约在 (180,148) -->
+  <path d="M40 48 Q180 252 320 48" fill="none" stroke="var(--dia-blue)" stroke-width="2"/>
+  <!-- 沿曲线一步步下降的小球 -->
+  <circle cx="82" cy="100" r="5" fill="var(--dia-accent)"/>
+  <circle cx="110" cy="124" r="5" fill="var(--dia-accent)"/>
+  <circle cx="138" cy="140" r="5" fill="var(--dia-accent)"/>
+  <circle cx="180" cy="150" r="6.5" fill="var(--dia-accent-deep)"/>
+  <!-- 步进箭头 -->
+  <path d="M88 104 L104 119" stroke="var(--dia-accent)" stroke-width="1.5" marker-end="url(#ga)"/>
+  <path d="M116 128 L132 136" stroke="var(--dia-accent)" stroke-width="1.5" marker-end="url(#ga)"/>
+  <path d="M146 143 L171 149" stroke="var(--dia-accent)" stroke-width="1.5" marker-end="url(#ga)"/>
+  <!-- 文字标注：放在曲线下方/上方的空白处，避免被曲线遮挡 -->
+  <text x="180" y="182" text-anchor="middle" font-size="12" fill="var(--dia-stroke-soft)">谷底（损失最低）</text>
+  <text x="44" y="34" font-size="12" fill="var(--dia-stroke-soft)">损失 ↑</text>
 </svg>
 </div>
-<p class="figure-caption">训练就是沿着损失曲线的负梯度方向，一步步"下山"到最低点。</p>
+<p class="figure-caption">图 1.3.2：训练就是沿着损失曲线的负梯度方向，一步步"下山"到最低点。</p>
 
 ## 导数、偏导、梯度：先给定义，再讲直觉
 

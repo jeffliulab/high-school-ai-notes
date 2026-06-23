@@ -29,7 +29,7 @@
   <text x="250" y="56" font-size="13" fill="var(--dia-blue)">Av</text>
 </svg>
 </div>
-<p class="figure-caption">矩阵 A 把向量 v 变成了 Av——旋转加缩放。神经网络的每一层都在重复做这件事。</p>
+<p class="figure-caption">图 1.3.1：矩阵 A 把向量 v 变成了 Av——旋转加缩放。神经网络的每一层都在重复做这件事。</p>
 
 把这个画面记在心里，后面学线性回归、PCA、神经网络时，你会发现它们都不过是这张图的变体。
 

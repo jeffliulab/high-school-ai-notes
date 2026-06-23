@@ -31,7 +31,7 @@ $$f(\lambda x+(1-\lambda)y)\le \lambda f(x)+(1-\lambda)f(y).$$
   <text x="222" y="150" font-size="12" fill="var(--dia-stroke-soft)">非凸：有多个坑</text>
 </svg>
 </div>
-<p class="figure-caption">凸函数只有一个全局最低点；非凸函数可能让你停在某个局部的小坑里。</p>
+<p class="figure-caption">图 1.3.4：凸函数只有一个全局最低点；非凸函数可能让你停在某个局部的小坑里。</p>
 
 ## 梯度下降：怎么一步步走下去
 
